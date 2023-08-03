@@ -2,7 +2,10 @@ import { Mail } from "@mui/icons-material";
 import LockIcon from "@mui/icons-material/Lock";
 import CloseIcon from "@mui/icons-material/Close";
 import { Input } from "@mui/joy";
-import scBack01 from "../background image/scBack01.png";
+import scBack01 from "../assets/backgroundImage/scBack01.png";
+import google32 from "../assets/icons/google32.png";
+import facebook from "../assets/icons/facebook32.png";
+import apple from "../assets/icons/apple32.png";
 import {
   Backdrop,
   Box,
@@ -12,7 +15,6 @@ import {
   FormControlLabel,
   IconButton,
   Modal,
-  TextField,
   Typography,
 } from "@mui/material";
 import { useSpring, animated } from "@react-spring/web";
@@ -20,6 +22,9 @@ import PropTypes from "prop-types";
 
 import { cloneElement, forwardRef, useState } from "react";
 import { Link } from "react-router-dom";
+import Buttons from "../components/buttons/Button";
+import { useSelector, useDispatch } from "react-redux";
+import { ADD_USER } from "../redux/Types/Types";
 
 const Fader = forwardRef(function Fade(props, ref) {
   const {
@@ -67,7 +72,7 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 450,
+  width: 500,
   bgcolor: "#fff",
   borderRadius: "20px",
   boxShadow: 24,
@@ -77,23 +82,36 @@ const style = {
 };
 
 const Login = ({ open, setOpen }) => {
-    const styles = {
-        borderRadius: "8px",
-        backgroundColor: "#023d65",
-        width: "140px",
-        fontWeight: "700",
-        color: "#fff",
-        "&:hover": {
-          backgroundColor: "#f5f5f5",
-        },
-      };
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const user = useSelector((state) => state.UserReducer.user);
+  const dispatch = useDispatch();
+  const handleSignin = () => {
+    console.log(user);
+    if (email && password) {
+      dispatch({
+        type: ADD_USER,
+        payload: true,
+      });
+      handleClose()
+      console.log(user);
+    }
+  };
+  const styles = {
+    borderRadius: "8px",
+    backgroundColor: "#023d65",
+    width: "140px",
+    fontWeight: "700",
+    color: "#fff",
+    "&:hover": {
+      backgroundColor: "#f5f5f5",
+    },
+  };
   const handleClose = () => setOpen(false);
 
   return (
     <div>
       <Modal
-        aria-labelledby="login-page"
-        aria-describedby="login-page"
         open={open}
         onClose={handleClose}
         closeAfterTransition
@@ -112,7 +130,14 @@ const Login = ({ open, setOpen }) => {
             <div style={{ display: "flex", flexDirection: "column" }}>
               <img
                 src={scBack01}
-                style={{ zIndex: "-1", position: "absolute", height: '350px', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
+                style={{
+                  zIndex: "-1",
+                  position: "absolute",
+                  height: "350px",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                }}
               />
               <Typography
                 variant="h5"
@@ -120,7 +145,7 @@ const Login = ({ open, setOpen }) => {
                   fontWeight: "700",
                   textAlign: "center",
                   fontFamily: "Helvetica",
-                  marginBottom: "10px",
+                  marginBottom: "20px",
                 }}
               >
                 Login
@@ -128,6 +153,8 @@ const Login = ({ open, setOpen }) => {
               <Input
                 variant="plain"
                 type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 startDecorator={<Mail sx={{ color: "#023d65" }} />}
                 sx={{ backgroundColor: "#f5f5f5", marginY: "10px" }}
                 placeholder="example@email.com"
@@ -135,6 +162,8 @@ const Login = ({ open, setOpen }) => {
               <Input
                 variant="plain"
                 type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 startDecorator={<LockIcon sx={{ color: "#023d65" }} />}
                 sx={{ backgroundColor: "#f5f5f5", marginTop: "10px" }}
                 placeholder="enter your password"
@@ -158,16 +187,94 @@ const Login = ({ open, setOpen }) => {
                   Forget Password
                 </a>
               </div>
-              <Button sx={{borderRadius: '8px', backgroundColor: '#023d65', width: '240px', alignSelf: 'center', color: '#fff', fontWeight: '700', marginTop: '10px'}} size={"large"} children={'Login'}/>
-              <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '15px'}}>
-                    <div style={{borderBottom: '1px solid #707070', width: '200px', height: '0px'}}></div>
-                    <div>or</div>
-                    <div style={{borderBottom: '1px solid #707070', width: '200px', height: '0px'}}></div>
+              <Buttons
+                sx={{
+                  borderRadius: "8px",
+                  backgroundColor: "#023d65",
+                  width: "240px",
+                  alignSelf: "center",
+                  color: "#fff",
+                  fontWeight: "700",
+                  marginTop: "10px",
+                  "&:hover": { backgroundColor: "#F5FADF", color: "#023d65" },
+                }}
+                size={"large"}
+                children={"Login"}
+                onClick={handleSignin}
+              />
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginTop: "15px",
+                }}
+              >
+                <div
+                  style={{
+                    borderBottom: "1px solid #707070",
+                    width: "170px",
+                    height: "0px",
+                  }}
+                ></div>
+                <div>or</div>
+                <div
+                  style={{
+                    borderBottom: "1px solid #707070",
+                    width: "170px",
+                    height: "0px",
+                  }}
+                ></div>
               </div>
-              <Button sx={{borderRadius: '8px', backgroundColor: '#fff', color: '#000', fontWeight: '600', boxShadow: '1px 3px 5px 2px #00000029', marginY: '10px', fontSize: '14px'}} size={"large"} children={'Sign Up using Google'} />
-              <Button sx={{borderRadius: '8px', backgroundColor: '#fff', color: '#000', fontWeight: '600', boxShadow: '1px 3px 5px 2px #00000029', marginY: '10px', fontSize: '14px'}} size={"large"} children={'Sign Up using Facebook'} />
-              <Button sx={{borderRadius: '8px', backgroundColor: '#fff', color: '#000', fontWeight: '600', boxShadow: '1px 3px 5px 2px #00000029', marginY: '10px', fontSize: '14px'}} size={"large"} children={'Sign Up using Apple'} />
-              <Typography>Not a member yet? <Link to=''>Sign up</Link></Typography>
+              <Buttons
+                sx={{
+                  borderRadius: "8px",
+                  backgroundColor: "#fff",
+                  color: "#000",
+                  fontWeight: "600",
+                  boxShadow: "1px 3px 5px 2px #00000029",
+                  marginY: "10px",
+                  fontSize: "14px",
+                }}
+                size={"large"}
+                children={`Sign Up using Google`}
+              />
+              <Buttons
+                sx={{
+                  borderRadius: "8px",
+                  backgroundColor: "#fff",
+                  color: "#000",
+                  fontWeight: "600",
+                  boxShadow: "1px 3px 5px 2px #00000029",
+                  marginY: "10px",
+                  fontSize: "14px",
+                }}
+                size={"large"}
+                children={"Sign Up using Facebook"}
+              />
+              <Buttons
+                sx={{
+                  borderRadius: "8px",
+                  backgroundColor: "#fff",
+                  color: "#000",
+                  fontWeight: "600",
+                  boxShadow: "1px 3px 5px 2px #00000029",
+                  marginY: "10px",
+                  fontSize: "14px",
+                }}
+                size={"large"}
+                children={"Sign Up using Apple"}
+              />
+              <Typography
+                variant="body2"
+                color="#505050"
+                style={{ alignSelf: "center", marginTop: "10px" }}
+              >
+                Not a member yet?{" "}
+                <Link to="" style={{ color: "#023d65", fontWeight: "700" }}>
+                  Sign up
+                </Link>
+              </Typography>
             </div>
           </Box>
         </Fade>

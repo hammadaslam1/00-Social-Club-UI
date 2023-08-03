@@ -1,9 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./assets/navbar/Navbar";
-import { EVENTS, STORIES, VENUES } from "./assets/components/routes/Routes";
+import Navbar from "./components/navbar/Navbar";
+import { EVENTS, STORIES, VENUES } from "./routes/Routes";
+import { Provider } from "react-redux";
+import Store from "./redux/Store";
 
 function App() {
   return (
+    <Provider store={Store}>
     <div className="App">
       <Router>
       <Navbar />
@@ -14,6 +17,7 @@ function App() {
         </Routes>
       </Router>
     </div>
+    </Provider>
   );
 }
 

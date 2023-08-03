@@ -1,13 +1,16 @@
-import scLogo01 from "../logos/scLogo01.png";
-import Search from "../components/inputs/Search";
+import scLogo01 from "../../assets/logos/scLogo01.png";
+import Search from "../inputs/Search";
 import { AppBar, Button, Toolbar } from "@mui/material";
 import { Link } from "react-router-dom";
-import { EVENTS, STORIES, VENUES } from "../components/routes/Routes";
-import Buttons from "../components/buttons/Button";
-import Login from "../screens/Login";
+import { EVENTS, STORIES, VENUES } from "../../routes/Routes";
+import Buttons from "../buttons/Button";
+import Login from "../../screens/Login";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  const user = useSelector((state) => state.UserReducer.user);
+  console.log(user);
   const links = {
     color: "#fff",
     textDecoration: "none",
@@ -19,7 +22,9 @@ const Navbar = () => {
   };
   const [open, setOpen] = useState(false);
   const handleLogin = () => {
-    setOpen(true);
+    if (!user) {
+      setOpen(true);
+    }
   };
   return (
     <AppBar
@@ -34,7 +39,7 @@ const Navbar = () => {
     >
       <Toolbar sx={{ display: "flex", justifyContent: "space-around" }}>
         <div className="" style={{ display: "flex", alignItems: "center" }}>
-          <img src={scLogo01} height="50px" />
+          <img src={scLogo01} width="160px" />
           <Search />
         </div>
         <div
@@ -62,7 +67,7 @@ const Navbar = () => {
           </Button>
           <Buttons
             children="Login"
-            function={handleLogin}
+            onClick={handleLogin}
             sx={{
               borderRadius: "8px",
               backgroundColor: "#fff",
