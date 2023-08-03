@@ -19,6 +19,7 @@ import { useSpring, animated } from "@react-spring/web";
 import PropTypes from "prop-types";
 
 import { cloneElement, forwardRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Fader = forwardRef(function Fade(props, ref) {
   const {
@@ -70,7 +71,7 @@ const style = {
   bgcolor: "#fff",
   borderRadius: "20px",
   boxShadow: 24,
-  p: 2,
+  p: 3,
   px: 6,
   textAlign: "right",
 };
@@ -111,7 +112,7 @@ const Login = ({ open, setOpen }) => {
             <div style={{ display: "flex", flexDirection: "column" }}>
               <img
                 src={scBack01}
-                style={{ zIndex: "-1", position: "absolute", height: '250px', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
+                style={{ zIndex: "-1", position: "absolute", height: '350px', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
               />
               <Typography
                 variant="h5"
@@ -135,14 +136,14 @@ const Login = ({ open, setOpen }) => {
                 variant="plain"
                 type="password"
                 startDecorator={<LockIcon sx={{ color: "#023d65" }} />}
-                sx={{ backgroundColor: "#f5f5f5", marginY: "10px" }}
+                sx={{ backgroundColor: "#f5f5f5", marginTop: "10px" }}
                 placeholder="enter your password"
               />
               <div
                 style={{
                   display: "flex",
                   width: "100%",
-                  justifyContent: "space-around",
+                  justifyContent: "space-between",
                   alignItems: "center",
                 }}
               >
@@ -157,7 +158,16 @@ const Login = ({ open, setOpen }) => {
                   Forget Password
                 </a>
               </div>
-              <Button sx={{borderRadius: '8px', backgroundColor: '#023d65', width: '240px', alignSelf: 'center', color: '#fff', fontWeight: '700'}} size={"large"}>Login</Button>
+              <Button sx={{borderRadius: '8px', backgroundColor: '#023d65', width: '240px', alignSelf: 'center', color: '#fff', fontWeight: '700', marginTop: '10px'}} size={"large"} children={'Login'}/>
+              <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '15px'}}>
+                    <div style={{borderBottom: '1px solid #707070', width: '200px', height: '0px'}}></div>
+                    <div>or</div>
+                    <div style={{borderBottom: '1px solid #707070', width: '200px', height: '0px'}}></div>
+              </div>
+              <Button sx={{borderRadius: '8px', backgroundColor: '#fff', color: '#000', fontWeight: '600', boxShadow: '1px 3px 5px 2px #00000029', marginY: '10px', fontSize: '14px'}} size={"large"} children={'Sign Up using Google'} />
+              <Button sx={{borderRadius: '8px', backgroundColor: '#fff', color: '#000', fontWeight: '600', boxShadow: '1px 3px 5px 2px #00000029', marginY: '10px', fontSize: '14px'}} size={"large"} children={'Sign Up using Facebook'} />
+              <Button sx={{borderRadius: '8px', backgroundColor: '#fff', color: '#000', fontWeight: '600', boxShadow: '1px 3px 5px 2px #00000029', marginY: '10px', fontSize: '14px'}} size={"large"} children={'Sign Up using Apple'} />
+              <Typography>Not a member yet? <Link to=''>Sign up</Link></Typography>
             </div>
           </Box>
         </Fade>
