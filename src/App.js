@@ -3,6 +3,7 @@ import Navbar from "./components/navbar/Navbar";
 import { EVENTS, STORIES, VENUES } from "./routes/Routes";
 import { Provider } from "react-redux";
 import Store from "./redux/Store";
+import './App.css'
 
 function App() {
   return (

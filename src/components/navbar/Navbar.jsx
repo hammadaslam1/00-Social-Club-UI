@@ -3,8 +3,8 @@ import Search from "../inputs/Search";
 import { AppBar, Button, Toolbar } from "@mui/material";
 import { Link } from "react-router-dom";
 import { EVENTS, STORIES, VENUES } from "../../routes/Routes";
-import Buttons from "../buttons/Button";
-import Login from "../../screens/Login";
+import SecondaryButton from "../buttons/SecondaryButton";
+import Login from "../dialogs/Login";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 
@@ -20,10 +20,10 @@ const Navbar = () => {
       backgroundColor: "#fff2",
     },
   };
-  const [open, setOpen] = useState(false);
+  const [openLogin, setOpenLogin] = useState(false);
   const handleLogin = () => {
     if (!user) {
-      setOpen(true);
+      setOpenLogin(true);
     }
   };
   return (
@@ -60,29 +60,18 @@ const Navbar = () => {
               Events
             </Link>
           </Button>
-          <Button style={{ padding: "0" }}>
+          <Button style={{ padding: "0", marginRight: '20px' }}>
             <Link to={STORIES} style={links}>
               Stories
             </Link>
           </Button>
-          <Buttons
+          <SecondaryButton
             children="Login"
             onClick={handleLogin}
-            sx={{
-              borderRadius: "8px",
-              backgroundColor: "#fff",
-              width: "140px",
-              fontWeight: "700",
-              color: "#023d65",
-              "&:hover": {
-                backgroundColor: "#f5f5f5",
-              },
-            }}
-            // size={'medium'}
           />
-          {open ? <Login open={open} setOpen={setOpen} /> : ""}
         </div>
       </Toolbar>
+          {openLogin ? <Login openLogin={openLogin} setOpenLogin={setOpenLogin} /> : ""}
     </AppBar>
   );
 };
