@@ -1,5 +1,5 @@
 import { applyMiddleware, combineReducers } from "redux";
-import UserReducer from "./reducers/User";
+import UserReducer from "./reducers/UserReducer";
 import { configureStore } from "@reduxjs/toolkit";
 import thunk from "redux-thunk";
 

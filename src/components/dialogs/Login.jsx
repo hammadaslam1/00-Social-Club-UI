@@ -290,7 +290,6 @@ const Login = ({ openLogin, setOpenLogin, openSignup, setOpenSignup }) => {
           <PrimaryButton
             sx={{
               marginTop: "10px",
-              color: "red",
             }}
             size={"large"}
             onClick={handleSignin}

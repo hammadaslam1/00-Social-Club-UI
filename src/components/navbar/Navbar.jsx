@@ -71,7 +71,7 @@ const Navbar = () => {
               Stories
             </Link>
           </Button>
-          {user ? (
+          {!user ? (
             <SecondaryButton children="Login" onClick={handleLogin} />
           ) : (
             <>

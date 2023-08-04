@@ -126,7 +126,6 @@ const Signup = ({ openSignup, setOpenSignup, setOpenLogin }) => {
           <PrimaryButton
             sx={{
               marginTop: "10px",
-              color: "red",
             }}
             size={"large"}
             // onClick={handleSignin}
