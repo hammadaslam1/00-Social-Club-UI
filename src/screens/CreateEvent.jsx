@@ -1,8 +1,16 @@
-import { Box, Card, Input, Typography } from "@mui/material";
+import {
+  Box,
+  Card,
+  IconButton,
+  Input,
+  TextField,
+  Typography,
+} from "@mui/material";
 import "./screens.css";
 import SignupInput from "../components/inputs/SignupInput";
-import { LocationOn } from "@mui/icons-material";
+import { LocationOn, Upload } from "@mui/icons-material";
 import PrimaryButton from "../components/buttons/PrimaryButton";
+import CreateInput from "../components/inputs/CreateInput";
 
 const CreateEvent = () => {
   return (
@@ -13,67 +21,68 @@ const CreateEvent = () => {
           sx={{
             fontWeight: "700",
             fontFamily: "Helvetica",
+            marginBottom: "30px",
           }}
         >
           Create New Event
         </Typography>
-        <SignupInput
+        <CreateInput
           type="text"
-          variant="plain"
           sx={{
             backgroundColor: "#f8f8f8",
             borderRadius: "8px",
             border: "1px solid transparent",
+            marginBottom: "10px",
             "&:focus": { border: "1px solid #023D65", outline: "none" },
           }}
           placeholder="Host One"
           label="Host Name"
         />
-        <SignupInput
+        <CreateInput
           type="text"
-          variant="plain"
           sx={{
             backgroundColor: "#f8f8f8",
             borderRadius: "8px",
             border: "1px solid transparent",
+            marginBottom: "10px",
             "&:focus": { border: "1px solid #023D65", outline: "none" },
           }}
           placeholder="Enter your email address"
           label="Email Address"
         />
-        <SignupInput
+        <CreateInput
           type="text"
-          variant="plain"
           sx={{
             backgroundColor: "#f8f8f8",
             borderRadius: "8px",
             border: "1px solid transparent",
+            marginBottom: "10px",
             "&:focus": { border: "1px solid #023D65", outline: "none" },
           }}
           endDecorator={<LocationOn sx={{ color: "#023d65" }} />}
           placeholder="Enter your location"
           label="Event Location"
         />
-        <SignupInput
+        <CreateInput
           type="text"
-          variant="plain"
           sx={{
             backgroundColor: "#f8f8f8",
             borderRadius: "8px",
             border: "1px solid transparent",
+            marginBottom: "10px",
             "&:focus": { border: "1px solid #023D65", outline: "none" },
           }}
           placeholder="Event Name"
           label="Event Title"
         />
-        <SignupInput
+        <CreateInput
           type="text"
-          variant="plain"
           sx={{
             backgroundColor: "#f8f8f8",
             borderRadius: "8px",
             // height: '140px',
             border: "1px solid transparent",
+            marginBottom: "10px",
             "&:focus": { border: "1px solid #023D65", outline: "none" },
           }}
           placeholder="Write short description of your event..."
@@ -81,26 +90,62 @@ const CreateEvent = () => {
           multiline
           rows={4}
         />
-        <SignupInput
+        <CreateInput
           type="text"
-          variant="plain"
           sx={{
             backgroundColor: "#f8f8f8",
             borderRadius: "8px",
             // height: '140px',
             border: "1px solid transparent",
+            marginBottom: "10px",
             "&:focus": { border: "1px solid #023D65", outline: "none" },
           }}
           placeholder="Write long description of your event..."
           label="Event Long Description"
           multiline
-          rows={4}
+          minRows={4}
+          maxRows={10}
         />
-        <PrimaryButton sx={{fontWeight: '500', alignSelf: 'left', borderRadius: '5px'}}>Add external event URLs</PrimaryButton>
-        {/* <Input type="file" /> */}
-        <div>
-            <SignupInput label='Event Tags' />
+        <PrimaryButton
+          sx={{
+            fontWeight: "500",
+            alignSelf: "left",
+            borderRadius: "5px",
+            marginBottom: "10px",
+          }}
+        >
+          Add external event URLs
+        </PrimaryButton>
+
+        <div className="draganddrop">
+          <div className="drop-body">
+            <IconButton size="large">
+              <Upload fontSize="large" />
+            </IconButton>
+            <div>
+              <Typography variant="h6">Click to Upload</Typography>
+              <Typography variant="body2" color="gray">
+                or just drag and drop
+              </Typography>
+            </div>
+          </div>
         </div>
+
+        {/* <div style={{ display: "flex", width: '100%' }}>
+          <SignupInput label="Event Tags" sx={{ width: '80%' }} />
+          <PrimaryButton
+            sx={{
+              fontWeight: "500",
+              borderRadius: "5px",
+              width: "20%",
+              marginBottom: "8px",
+              alignSelf: "flex-end",
+            //   flex: '1'
+            }}
+          >
+            Add
+          </PrimaryButton>
+        </div> */}
       </Box>
     </Card>
   );
