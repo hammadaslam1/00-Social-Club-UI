@@ -4,13 +4,13 @@ const PrimaryButton = ({sx={}, ...props }) => {
   return (
     <Button
     sx={{
-        ...sx,
-        borderRadius: "8px",
-        fontWeight: "700",
-        backgroundColor: "#023d65",
-        width: "240px",
-        alignSelf: "center",
-        color: '#fff',        
+      borderRadius: "8px",
+      fontWeight: "700",
+      backgroundColor: "#023d65",
+      width: "240px",
+      alignSelf: "center",
+      color: '#fff',        
+      ...sx,
         "&:hover": {backgroundColor: "#f5fadf", color: '#023d65'}
       }}
       {...props}

@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
 
-const PrimaryButton = ({ ...props }) => {
+const SecondaryButton = ({sx={}, ...props }) => {
   return (
     <Button
       sx={{
@@ -9,6 +9,7 @@ const PrimaryButton = ({ ...props }) => {
         backgroundColor: "#fff",
         width: "140px",
         color: "#023d65",
+        ...sx,
         "&:hover": { backgroundColor: "#f5fadf" },
       }}
       {...props}
@@ -18,4 +19,4 @@ const PrimaryButton = ({ ...props }) => {
   );
 };
 
-export default PrimaryButton;
+export default SecondaryButton;

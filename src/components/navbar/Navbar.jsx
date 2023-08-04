@@ -1,15 +1,17 @@
 import scLogo01 from "../../assets/logos/scLogo01.png";
 import Search from "../inputs/Search";
-import { AppBar, Button, Toolbar } from "@mui/material";
-import { Link } from "react-router-dom";
-import { EVENTS, STORIES, VENUES } from "../../routes/Routes";
+import { AppBar, Avatar, Button, Toolbar } from "@mui/material";
+import { Link, useNavigate } from "react-router-dom";
+import { CREATE_EVENT, EVENTS, STORIES, VENUES } from "../../routes/Routes";
 import SecondaryButton from "../buttons/SecondaryButton";
 import Login from "../dialogs/Login";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import Signup from "../dialogs/Signup";
 
 const Navbar = () => {
   const user = useSelector((state) => state.UserReducer.user);
+  const navigate = useNavigate()
   console.log(user);
   const links = {
     color: "#fff",
@@ -21,6 +23,10 @@ const Navbar = () => {
     },
   };
   const [openLogin, setOpenLogin] = useState(false);
+  const [openSignup, setOpenSignup] = useState(false);
+
+  const [create, setCreate] = useState(false)
+
   const handleLogin = () => {
     if (!user) {
       setOpenLogin(true);
@@ -28,7 +34,7 @@ const Navbar = () => {
   };
   return (
     <AppBar
-      position="static"
+      position="sticky"
       sx={{
         backgroundColor: "#023d65",
         width: "100%",
@@ -60,18 +66,52 @@ const Navbar = () => {
               Events
             </Link>
           </Button>
-          <Button style={{ padding: "0", marginRight: '20px' }}>
+          <Button style={{ padding: "0", marginRight: "20px" }}>
             <Link to={STORIES} style={links}>
               Stories
             </Link>
           </Button>
-          <SecondaryButton
-            children="Login"
-            onClick={handleLogin}
-          />
+          {user ? (
+            <SecondaryButton children="Login" onClick={handleLogin} />
+          ) : (
+            <>
+              {!create ? (
+                <SecondaryButton
+                  children="Create Event"
+                  sx={{ marginRight: "25px", width: "160px" }}
+                  onClick={()=>{
+                    setCreate(true)
+                    navigate(CREATE_EVENT)
+                  }}
+                />
+              ) : (
+                ""
+              )}
+              <Avatar />
+            </>
+          )}
         </div>
       </Toolbar>
-          {openLogin ? <Login openLogin={openLogin} setOpenLogin={setOpenLogin} /> : ""}
+      {openLogin ? (
+        <Login
+          openLogin={openLogin}
+          setOpenLogin={setOpenLogin}
+          openSignup={openSignup}
+          setOpenSignup={setOpenSignup}
+        />
+      ) : (
+        ""
+      )}
+      {openSignup ? (
+        <Signup
+          openSignup={openSignup}
+          setOpenSignup={setOpenSignup}
+          openLogin={openLogin}
+          setOpenLogin={setOpenLogin}
+        />
+      ) : (
+        ""
+      )}
     </AppBar>
   );
 };

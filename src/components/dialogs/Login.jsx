@@ -30,13 +30,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { ADD_USER } from "../../redux/Types/Types";
 import "./dialog.css";
 import LoginInput from "../inputs/LoginInput";
-
+import Signup from "./Signup";
 
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="down" ref={ref} {...props} />;
 });
 
-const Login = ({ openLogin, setOpenLogin }) => {
+const Login = ({ openLogin, setOpenLogin, openSignup, setOpenSignup }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const user = useSelector((state) => state.UserReducer.user);
@@ -228,16 +228,15 @@ const Login = ({ openLogin, setOpenLogin }) => {
       keepMounted
       onClose={handleClose}
       scroll="body"
-      PaperProps={{sx:{ borderRadius: "20px" }}}
-      
+      PaperProps={{ sx: { borderRadius: "20px" } }}
     >
       <Box sx={{ padding: 5, width: 500 }}>
         <IconButton
           sx={{
             width: "fit-content",
             position: "absolute",
-            top: "0",
-            right: "0",
+            top: 10,
+            right: 10,
           }}
           onClick={handleClose}
         >
@@ -354,9 +353,12 @@ const Login = ({ openLogin, setOpenLogin }) => {
                 style={{ marginTop: "10px" }}
               >
                 Not a member yet?{" "}
-                <Link
-                  to=""
-                  
+                <button
+                  // to=""
+                  onClick={() => {
+                    setOpenSignup(true);
+                    setOpenLogin(false);
+                  }}
                   style={{
                     color: "#023d65",
                     textDecoration: "underline",
@@ -364,11 +366,12 @@ const Login = ({ openLogin, setOpenLogin }) => {
                   }}
                 >
                   Sign up
-                </Link>
+                </button>
               </Typography>
             </DialogActions>
           </div>
         </div>
+        
       </Box>
     </Dialog>
   );

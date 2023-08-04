@@ -1,0 +1,14 @@
+.create-main{
+    background-color: #fff;
+    margin: 30px;
+    margin-left: 60px;
+    margin-right: 60px;
+    border: 1px solid #E9E9E9;
+    border-radius: 10px;
+}
+.create-box{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin: 30px auto;
+}
