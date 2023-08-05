@@ -3,6 +3,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import "./footer.css";
 import { useNavigate } from "react-router-dom";
 import { CONTACT_US } from '../../routes/Routes'
+import BACK_IMAGE from '../../assets/backgroundImage/scBack01.png'
 
 const Footer = () => {
     const navigate = useNavigate();

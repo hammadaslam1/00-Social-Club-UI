@@ -5,12 +5,13 @@ import CreateInput from "../components/inputs/CreateInput";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { HOME } from "../routes/Routes";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import CheckBox from "../components/inputs/CheckBox";
 import "./screens.css";
 
 const CreateEvent = () => {
   const navigate = useNavigate();
+  const [price, setPrice] = useState(false);
   const user = useSelector((state) => state.UserReducer.user);
   // useEffect(()=>{
   //   if (!user) {
@@ -126,7 +127,7 @@ const CreateEvent = () => {
         </Typography>
         <div className="draganddrop">
           <div className="drop-body">
-            <Button className="drag-btn" size="large" disableRipple={true}>
+            <Button className="drag-btn" sx={{padding: '50px', color: 'gray'}} size="large" disableRipple={true}>
               <Upload fontSize="large" />
               <div>
                 <Typography variant="h6">Click to Upload</Typography>
@@ -186,26 +187,28 @@ const CreateEvent = () => {
             label="The Event is Paid"
             sx={{
               fontWeight: "600",
-              backgroundColor: "#f5fadf",
+              // backgroundColor: "#f5fadf",
               borderRadius: "5px",
               padding: "5px",
               width: '100%'
             }}
-            
+            onChange={()=>setPrice(!price)}
             />
           <CheckBox
             label="The Event is Free"
             sx={{
               fontWeight: "600",
-              backgroundColor: "#f5fadf",
+              // backgroundColor: "#f5fadf",
               borderRadius: "5px",
               padding: "5px",
               width: '100%'
             }}
           />
-              <div>
-              <Typography>Ticket Price</Typography>
-              <Typography>$100</Typography>
+          <div style={{height: '10px'}}>
+
+              {price?
+              <Typography sx={{display: 'flex', justifyContent: 'space-between', width: '100%'}}>Ticket Price <span>$100</span></Typography>
+              :''}
               </div>
         </div>
         <div
