@@ -6,17 +6,16 @@ import {
   FormLabel,
 } from "@mui/material";
 
-const CheckBox = ({ ...props }) => {
+const CheckBox = ({sx={}, ...props }) => {
   return (
     <FormControl>
       <FormLabel
         sx={{ color: "#000", fontSize: "14px", marginBottom: "2px" }}
-        required
       >
         {props.heading}
       </FormLabel>
       <FormControlLabel
-        sx={{ "& .MuiFormControlLabel-label": { fontSize: 14 } }}
+        sx={{ "& .MuiFormControlLabel-label": { fontSize: 14, ...sx }, ...sx }}
         control={<Checkbox size="small" />}
         {...props}
       />

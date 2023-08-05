@@ -8,6 +8,7 @@ const SignupInput = ({ ...props }) => {
         {props.label}
       </FormLabel>
       <Input  {...props} />
+      {/* <textarea {...props} /> */}
       <FormHelperText>{props.helperText}</FormHelperText>
     </FormControl>
   );

@@ -10,8 +10,8 @@ const PrimaryButton = ({sx={}, ...props }) => {
       width: "240px",
       alignSelf: "center",
       color: '#fff',        
+      "&:hover": {backgroundColor: "#f5fadf", color: '#023d65'},
       ...sx,
-        "&:hover": {backgroundColor: "#f5fadf", color: '#023d65'}
       }}
       {...props}
     >

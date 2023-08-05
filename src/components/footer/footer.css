@@ -1,0 +1,26 @@
+.footer-div{
+    display: flex;
+    height: 150px;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    color: #f5fadf;
+    text-align: center;
+    /* padding: 30px; */
+}
+
+.footer-div a{
+    text-decoration: underline;
+}
+
+.btn-group{
+    align-self: center;
+    font-size: 30px;
+}
+
+.line{
+    height: 60%;
+    align-self: center;
+    border-right: 2px solid #f5fadf;
+    
+}
