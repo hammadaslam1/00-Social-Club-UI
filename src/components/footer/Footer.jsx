@@ -3,7 +3,8 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import "./footer.css";
 import { useNavigate } from "react-router-dom";
 import { CONTACT_US } from '../../routes/Routes'
-import BACK_IMAGE from '../../assets/backgroundImage/scBack01.png'
+import FOOTER_IMAGE from '../../assets/logos/footerLogo01.png'
+
 
 const Footer = () => {
     const navigate = useNavigate();
@@ -16,6 +17,9 @@ const Footer = () => {
     >
       <Toolbar sx={{ display: "flex", justifyContent: "space-around" }}>
         
+        <div className="footer-image">
+        <img src={FOOTER_IMAGE} />
+        </div>
         <div className="footer-div">
           <ButtonGroup variant="plain" className="btn-group" aria-label="text button group">
             <Button sx={{textTransform: 'capitalize', fontSize: '20px'}} disableRipple>About us</Button>

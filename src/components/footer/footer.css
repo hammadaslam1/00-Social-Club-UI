@@ -24,3 +24,10 @@
     border-right: 2px solid #f5fadf;
     
 }
+
+.footer-image{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    left: 70px;
+}

@@ -1,0 +1,19 @@
+.menu-div{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+.menu-avatar{
+    display: flex;
+    border-bottom: 1px solid #e6e6e6;
+    margin: 5px;
+    align-items: center;
+    /* justify-content: start; */
+    /* margin-right: 10px; */
+}
+.menu-profile{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}

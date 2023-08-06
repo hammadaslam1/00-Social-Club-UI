@@ -1,5 +1,6 @@
 import scLogo01 from "../../assets/logos/scLogo01.png";
-import LogoutIcon from '@mui/icons-material/Logout';
+import "./navbar.css";
+import { TbLogin } from "react-icons/tb";
 import Search from "../inputs/Search";
 import {
   AppBar,
@@ -15,13 +16,15 @@ import { CREATE_EVENT, EVENTS, STORIES, VENUES } from "../../routes/Routes";
 import SecondaryButton from "../buttons/SecondaryButton";
 import Login from "../dialogs/Login";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Signup from "../dialogs/Signup";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import PrimaryButton from "../buttons/PrimaryButton";
+import { ADD_USER } from "../../redux/Types/Types";
 
 const Navbar = () => {
   const user = useSelector((state) => state.UserReducer.user);
+  const dispatch = useDispatch()
   const navigate = useNavigate();
   console.log(user);
   const links = {
@@ -51,6 +54,7 @@ const Navbar = () => {
       setOpenLogin(true);
     }
   };
+  
   return (
     <AppBar
       position="sticky"
@@ -125,54 +129,25 @@ const Navbar = () => {
                 MenuListProps={{
                   "aria-labelledby": "basic-button",
                 }}
-                sx={{ padding: "15px" }}
+                // sx={{ width: "200px" }}
               >
-                <MenuItem sx={{display: 'flex', flexDirection: 'column', padding: '0'}} onClick={handleClose}>
-                  <div style={{ display: "flex" }}>
-                    <Avatar />
-                    <div style={{ display: "flex", flexDirection: "column" }}>
-                      <Typography>Ms. Janvi</Typography>
-                      <PrimaryButton
-                        size="small"
-                        sx={{
-                          width: "fit-content",
-                          textTransform: "capitalize",
-                          fontSize: "10px",
-                          borderRadius: "4px",
-                          
-                          "&:hover": { backgroundColor: "#023d65" },
-                        }}
-                      >
-                        Edit Profile
-                      </PrimaryButton>
+                <div className="menu-div">
+                  <div className="menu-avatar">
+                    <Avatar sx={{marginLeft: '20px'}} />
+                    <div className="menu-profile">
+                      <Typography fontSize={14} fontWeight={600}>Ms. Janvi</Typography>
+                      <PrimaryButton size='small' sx={{width: 'fit-content', textTransform: 'capitalize', fontSize: '10px', borderRadius: '4px', fontWeight: '500'}}>Edit Profile</PrimaryButton>
                     </div>
                   </div>
-                </MenuItem>
-                <MenuItem sx={{display: 'flex', flexDirection: 'column', padding: '0'}}>
-                  <Button
-                    onClick={handleClose}
-                    sx={{ textTransform: "capitalize", width: '100%', color: "#000"}}
-                  >
-                    Your Event
-                  </Button>
-                </MenuItem>
-                <MenuItem sx={{display: 'flex', flexDirection: 'column', padding: '0'}}>
-                  <Button
-                    onClick={handleClose}
-                    sx={{ textTransform: "capitalize", width: '100%', color: "#000" }}
-                  >
-                    Help
-                  </Button>
-                </MenuItem>
-                <MenuItem sx={{display: 'flex', flexDirection: 'column', padding: '0'}}>
-                  <Button
-                    onClick={handleClose}
-                    startIcon={<LogoutIcon size="small" />}
-                    sx={{ textTransform: "capitalize", width: '100%', color: "#000" }}
-                  >
-                    Logout
-                  </Button>
-                </MenuItem>
+                    <Button sx={{textTransform: 'capitalize', color: 'black', textAlign: 'left'}} size="small">Your Event</Button>
+                    <Button sx={{textTransform: 'capitalize', color: 'black', textAlign: 'left'}} size="small">Help</Button>
+                    <Button sx={{textTransform: 'capitalize', color: 'black', textAlign: 'left'}} size="small" startIcon={<TbLogin />} onClick={()=>{
+                      dispatch({
+                        type: ADD_USER,
+                        payload: false,
+                      });
+                    }}>Logout</Button>
+                </div>
               </Menu>
             </>
           )}
