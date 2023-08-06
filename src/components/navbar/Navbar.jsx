@@ -1,4 +1,5 @@
 import scLogo01 from "../../assets/logos/scLogo01.png";
+import LogoutIcon from '@mui/icons-material/Logout';
 import Search from "../inputs/Search";
 import {
   AppBar,
@@ -32,7 +33,7 @@ const Navbar = () => {
       backgroundColor: "#fff2",
     },
   };
-  const [openLogin, setOpenLogin] = useState(false);
+  const [openLogin, setOpenLogin] = useState(true);
   const [openSignup, setOpenSignup] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -124,9 +125,9 @@ const Navbar = () => {
                 MenuListProps={{
                   "aria-labelledby": "basic-button",
                 }}
-                sx={{padding: '15px'}}
+                sx={{ padding: "15px" }}
               >
-                <MenuItem onClick={handleClose}>
+                <MenuItem sx={{display: 'flex', flexDirection: 'column', padding: '0'}} onClick={handleClose}>
                   <div style={{ display: "flex" }}>
                     <Avatar />
                     <div style={{ display: "flex", flexDirection: "column" }}>
@@ -138,7 +139,8 @@ const Navbar = () => {
                           textTransform: "capitalize",
                           fontSize: "10px",
                           borderRadius: "4px",
-                          "&:hover": { backgroundColor: "#023d65"}
+                          
+                          "&:hover": { backgroundColor: "#023d65" },
                         }}
                       >
                         Edit Profile
@@ -146,8 +148,31 @@ const Navbar = () => {
                     </div>
                   </div>
                 </MenuItem>
-                <MenuItem onClick={handleClose}>My account</MenuItem>
-                <MenuItem onClick={handleClose}>Logout</MenuItem>
+                <MenuItem sx={{display: 'flex', flexDirection: 'column', padding: '0'}}>
+                  <Button
+                    onClick={handleClose}
+                    sx={{ textTransform: "capitalize", width: '100%', color: "#000"}}
+                  >
+                    Your Event
+                  </Button>
+                </MenuItem>
+                <MenuItem sx={{display: 'flex', flexDirection: 'column', padding: '0'}}>
+                  <Button
+                    onClick={handleClose}
+                    sx={{ textTransform: "capitalize", width: '100%', color: "#000" }}
+                  >
+                    Help
+                  </Button>
+                </MenuItem>
+                <MenuItem sx={{display: 'flex', flexDirection: 'column', padding: '0'}}>
+                  <Button
+                    onClick={handleClose}
+                    startIcon={<LogoutIcon size="small" />}
+                    sx={{ textTransform: "capitalize", width: '100%', color: "#000" }}
+                  >
+                    Logout
+                  </Button>
+                </MenuItem>
               </Menu>
             </>
           )}

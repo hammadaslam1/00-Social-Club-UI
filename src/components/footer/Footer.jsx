@@ -15,9 +15,7 @@ const Footer = () => {
       }}
     >
       <Toolbar sx={{ display: "flex", justifyContent: "space-around" }}>
-        {/* <div className="" style={{ display: "flex", alignItems: "center" }}>
-          <img src={BACK_IMAGE} style={{opacity: '100%'}} width="160px" />
-        </div> */}
+        
         <div className="footer-div">
           <ButtonGroup variant="plain" className="btn-group" aria-label="text button group">
             <Button sx={{textTransform: 'capitalize', fontSize: '20px'}} disableRipple>About us</Button>
