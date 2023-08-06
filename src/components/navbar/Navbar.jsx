@@ -54,7 +54,6 @@ const Navbar = () => {
       setOpenLogin(true);
     }
   };
-  
   return (
     <AppBar
       position="sticky"
@@ -79,17 +78,23 @@ const Navbar = () => {
             fontFamily: "Helvetica",
           }}
         >
-          <Button style={{ padding: "0" }}>
+          <Button style={{ padding: "0" }} onClick={() => {
+            setCreate(false)
+          }}>
             <Link to={VENUES} style={links}>
               Venues
             </Link>
           </Button>
-          <Button style={{ padding: "0" }}>
+          <Button style={{ padding: "0" }} onClick={() => {
+            setCreate(false)
+          }}>
             <Link to={EVENTS} style={links}>
               Events
             </Link>
           </Button>
-          <Button style={{ padding: "0", marginRight: "20px" }}>
+          <Button style={{ padding: "0", marginRight: "20px" }} onClick={() => {
+            setCreate(false)
+          }}>
             <Link to={STORIES} style={links}>
               Stories
             </Link>
@@ -129,24 +134,24 @@ const Navbar = () => {
                 MenuListProps={{
                   "aria-labelledby": "basic-button",
                 }}
-                // sx={{ width: "200px" }}
+              // sx={{ width: "200px" }}
               >
                 <div className="menu-div">
                   <div className="menu-avatar">
-                    <Avatar sx={{marginLeft: '20px'}} />
+                    <Avatar sx={{ marginLeft: '20px' }} />
                     <div className="menu-profile">
                       <Typography fontSize={14} fontWeight={600}>Ms. Janvi</Typography>
-                      <PrimaryButton size='small' sx={{width: 'fit-content', textTransform: 'capitalize', fontSize: '10px', borderRadius: '4px', fontWeight: '500'}}>Edit Profile</PrimaryButton>
+                      <PrimaryButton size='small' sx={{ width: 'fit-content', textTransform: 'capitalize', fontSize: '10px', borderRadius: '4px', fontWeight: '500' }}>Edit Profile</PrimaryButton>
                     </div>
                   </div>
-                    <Button sx={{textTransform: 'capitalize', color: 'black', textAlign: 'left'}} size="small">Your Event</Button>
-                    <Button sx={{textTransform: 'capitalize', color: 'black', textAlign: 'left'}} size="small">Help</Button>
-                    <Button sx={{textTransform: 'capitalize', color: 'black', textAlign: 'left'}} size="small" startIcon={<TbLogin />} onClick={()=>{
-                      dispatch({
-                        type: ADD_USER,
-                        payload: false,
-                      });
-                    }}>Logout</Button>
+                  <Button sx={{ textTransform: 'capitalize', color: 'black', textAlign: 'left' }} size="small">Your Event</Button>
+                  <Button sx={{ textTransform: 'capitalize', color: 'black', textAlign: 'left' }} size="small">Help</Button>
+                  <Button sx={{ textTransform: 'capitalize', color: 'black', textAlign: 'left' }} size="small" startIcon={<TbLogin />} onClick={() => {
+                    dispatch({
+                      type: ADD_USER,
+                      payload: false,
+                    });
+                  }}>Logout</Button>
                 </div>
               </Menu>
             </>

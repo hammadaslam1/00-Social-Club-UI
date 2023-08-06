@@ -13,6 +13,7 @@ const Footer = () => {
       sx={{
         backgroundColor: "#023d65",
         width: "100%",
+        
       }}
     >
       <Toolbar sx={{ display: "flex", justifyContent: "space-around" }}>

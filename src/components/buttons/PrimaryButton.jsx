@@ -9,7 +9,8 @@ const PrimaryButton = ({sx={}, ...props }) => {
       backgroundColor: "#023d65",
       width: "240px",
       alignSelf: "center",
-      color: '#fff',        
+      color: '#fff',    
+      textTransform: 'capitalize',    
       "&:hover": {backgroundColor: "#f5fadf", color: '#023d65'},
       ...sx,
       }}

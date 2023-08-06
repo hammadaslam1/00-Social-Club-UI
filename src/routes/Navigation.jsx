@@ -4,6 +4,7 @@ import { CONTACT_US, CREATE_EVENT, EVENTS, HOME, STORIES, VENUES } from "./Route
 import CreateEvent from "../screens/CreateEvent";
 import Footer from "../components/footer/Footer";
 import ContactUs from "../screens/ContactUs";
+import Venues from "../screens/Venues";
 
 const Navigation = () => {
   return (
@@ -11,7 +12,7 @@ const Navigation = () => {
       <Navbar />
       <Routes>
         <Route exact path={HOME} />
-        <Route path={VENUES} />
+        <Route path={VENUES} element={<Venues />}/>
         <Route path={EVENTS} />
         <Route path={STORIES} />
         <Route path={CREATE_EVENT} element={<CreateEvent />} />

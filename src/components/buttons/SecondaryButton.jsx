@@ -9,6 +9,7 @@ const SecondaryButton = ({sx={}, ...props }) => {
         backgroundColor: "#fff",
         width: "140px",
         color: "#023d65",
+        textTransform: 'capitalize',
         ...sx,
         "&:hover": { backgroundColor: "#f5fadf" },
       }}

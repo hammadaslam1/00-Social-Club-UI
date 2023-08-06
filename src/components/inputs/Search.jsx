@@ -1,7 +1,7 @@
-import { AppBar, Box, InputBase, Toolbar, alpha, styled } from "@mui/material";
+import { InputBase,  alpha, styled } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
-const Search = () => {
+const Search = ({sx={}, ph=''}) => {
   const SearchBar = styled("div")(({ theme }) => ({
     position: "relative",
     borderRadius: theme.shape.borderRadius,
@@ -31,15 +31,11 @@ const Search = () => {
     color: "inherit",
     "& .MuiInputBase-input": {
       padding: theme.spacing(1, 1, 1, 0),
-      // vertical padding + font size from searchIcon
       paddingLeft: `calc(1em + ${theme.spacing(4)})`,
       transition: theme.transitions.create("width"),
       width: "100%",
       [theme.breakpoints.up("sm")]: {
         width: "30ch",
-        // "&:focus": {
-        //   width: "30ch",
-        // },
       },
     },
   }));
@@ -50,13 +46,14 @@ const Search = () => {
         backgroundColor: "#00000039",
         color: "white",
         borderRadius: "8px",
+        ...sx,
       }}
     >
       <SearchIconWrapper>
         <SearchIcon />
       </SearchIconWrapper>
       <StyledInputBase
-        placeholder="Search for 'New Events'"
+        placeholder={ph?ph:"Search for 'New Events'"}
         inputProps={{ "aria-label": "search" }}
       />
     </SearchBar>

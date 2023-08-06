@@ -13,11 +13,11 @@ const CreateEvent = () => {
   const navigate = useNavigate();
   const [price, setPrice] = useState(false);
   const user = useSelector((state) => state.UserReducer.user);
-  // useEffect(()=>{
-  //   if (!user) {
-  //     navigate(HOME);
-  //   }
-  // }, user)
+  useEffect(()=>{
+    if (!user) {
+      navigate(HOME);
+    }
+  }, user)
 
   return (
     <Card className="create-main" elevation={false}>
