@@ -2,10 +2,10 @@ import { Box, Card, IconButton, Switch, Typography } from "@mui/material";
 import "./screens.css";
 import Search from "../components/inputs/Search";
 import TuneIcon from "@mui/icons-material/Tune";
-import VENUE_IMAGE from "../assets/images/eventImage01.png";
+import EVENT_IMAGE from '../assets/images/eventImage01.png'
 // import LOGO from "../assets/logos/footerLogo01.png";
 
-const Venues = () => {
+const Events = () => {
   const dates = [
     "Friday, march 10",
     "Saturday, March 11",
@@ -70,7 +70,7 @@ const Venues = () => {
                 color: "#404040",
               }}
             >
-              <img src={VENUE_IMAGE} width="180px" />
+              <img src={EVENT_IMAGE} width='180px' />
               <div
                 style={{
                   display: "flex",
@@ -96,4 +96,4 @@ const Venues = () => {
   );
 };
 
-export default Venues;
+export default Events;
