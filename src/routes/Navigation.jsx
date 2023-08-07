@@ -6,6 +6,7 @@ import {
   EVENTS,
   HOME,
   STORIES,
+  STORY_DETAIL,
   VENUES,
 } from "./Routes";
 import CreateEvent from "../screens/CreateEvent";
@@ -14,6 +15,7 @@ import ContactUs from "../screens/ContactUs";
 import Venues from "../screens/Venues";
 import Events from "../screens/Events";
 import Stories from "../screens/Stories";
+import StoryDetail from "../screens/StoryDetail";
 
 const Navigation = () => {
   return (
@@ -24,6 +26,7 @@ const Navigation = () => {
         <Route path={VENUES} element={<Venues />} />
         <Route path={EVENTS} element={<Events />} />
         <Route path={STORIES} element={<Stories />} />
+        <Route path={STORY_DETAIL} element={<StoryDetail />} />
         <Route path={CREATE_EVENT} element={<CreateEvent />} />
         <Route path={CONTACT_US} element={<ContactUs />} />
       </Routes>

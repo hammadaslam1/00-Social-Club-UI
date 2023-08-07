@@ -11,8 +11,12 @@ import {
 import HEADING_IMAGE from "../assets/logos/footerLogo01.png";
 import STORIES_HEAD from "../assets/images/storiesHead01.png";
 import STORIES_BODY from "../assets/images/storyBody01.png";
+import { RiCalendarTodoFill } from "react-icons/ri";
+import { STORY_DETAIL } from "../routes/Routes";
+import { useNavigate } from "react-router-dom";
 
 const Stories = () => {
+  const navigate = useNavigate();
   return (
     <Box sx={{ margin: "50px 80px" }}>
       <div className="story-head">
@@ -20,6 +24,7 @@ const Stories = () => {
           <Card
             sx={{ boxShadow: "0px 3px 30px #0000001F", borderRadius: "20px" }}
             elevation={0}
+            key={i}
           >
             <CardActionArea>
               <div style={{ padding: "15px 15px 0 15px" }}>
@@ -72,6 +77,7 @@ const Stories = () => {
           <Card
             sx={{ boxShadow: "0px 3px 30px #0000001F", borderRadius: "20px" }}
             elevation={0}
+            key={i}
           >
             <CardActionArea>
               <div style={{ padding: "10px 10px 0 10px" }}>
@@ -86,17 +92,20 @@ const Stories = () => {
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry's
                   standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book. It has survived not only five centuries, but
-                  also the leap into electronic typesetting, remaining
-                  essentially unchang...
+                  printer took a galley of type and scrambled it to
                 </Typography>
               </CardContent>
             </CardActionArea>
-            <CardActions>
-                
-              <Button size="small" color="primary">
-                Share
+            <CardActions
+              sx={{ display: "flex", justifyContent: "space-between" }}
+            >
+              <Typography sx={{ display: "flex" }} fontSize="12px">
+                <RiCalendarTodoFill fontSize="16px" /> 03 April, 2018
+              </Typography>
+              <Button size="small" onClick={()=>{
+                navigate(STORY_DETAIL);
+              }} sx={{textTransform: 'capitalize'}} disableRipple>
+                Read more
               </Button>
             </CardActions>
           </Card>
