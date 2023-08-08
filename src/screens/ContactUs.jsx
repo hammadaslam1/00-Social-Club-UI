@@ -29,7 +29,7 @@ const ContactUs = () => {
           placeholder="Name"
           label="Full Name"
         />
-        <CreateInput
+        <SignupInput
           type="text"
           sx={{
             backgroundColor: "#f8f8f8",
@@ -42,7 +42,7 @@ const ContactUs = () => {
           label="Email Address"
         />
 
-        <CreateInput
+        <SignupInput
           type="text"
           sx={{
             backgroundColor: "#f8f8f8",

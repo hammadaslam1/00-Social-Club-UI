@@ -3,6 +3,7 @@ import Navbar from "../components/navbar/Navbar";
 import {
   CONTACT_US,
   CREATE_EVENT,
+  EDIT_PROFILE,
   EVENTS,
   HOME,
   STORIES,
@@ -16,6 +17,7 @@ import Venues from "../screens/Venues";
 import Events from "../screens/Events";
 import Stories from "../screens/Stories";
 import StoryDetail from "../screens/StoryDetail";
+import EditProfile from "../screens/EditProfile";
 
 const Navigation = () => {
   return (
@@ -29,6 +31,7 @@ const Navigation = () => {
         <Route path={STORY_DETAIL} element={<StoryDetail />} />
         <Route path={CREATE_EVENT} element={<CreateEvent />} />
         <Route path={CONTACT_US} element={<ContactUs />} />
+        <Route path={EDIT_PROFILE} element={<EditProfile />} />
       </Routes>
       <Footer />
     </Router>

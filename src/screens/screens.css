@@ -65,3 +65,16 @@ label{
   margin: 20px 0 5px 0;
   font-size: 14px;
 }
+
+.edit-box {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  margin: 20px auto;
+}
+
+.profile-lbl{
+  color: #707070;
+  margin: 20px 0 5px 0;
+  font-size: 16px;
+}

@@ -12,7 +12,7 @@ import {
   Typography,
 } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
-import { CREATE_EVENT, EVENTS, STORIES, VENUES } from "../../routes/Routes";
+import { CREATE_EVENT, EDIT_PROFILE, EVENTS, STORIES, VENUES } from "../../routes/Routes";
 import SecondaryButton from "../buttons/SecondaryButton";
 import Login from "../dialogs/Login";
 import { useState } from "react";
@@ -24,7 +24,7 @@ import { ADD_USER } from "../../redux/Types/Types";
 
 const Navbar = () => {
   const user = useSelector((state) => state.UserReducer.user);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   console.log(user);
   const links = {
@@ -78,23 +78,32 @@ const Navbar = () => {
             fontFamily: "Helvetica",
           }}
         >
-          <Button style={{ padding: "0" }} onClick={() => {
-            setCreate(false)
-          }}>
+          <Button
+            style={{ padding: "0" }}
+            onClick={() => {
+              setCreate(false);
+            }}
+          >
             <Link to={VENUES} style={links}>
               Venues
             </Link>
           </Button>
-          <Button style={{ padding: "0" }} onClick={() => {
-            setCreate(false)
-          }}>
+          <Button
+            style={{ padding: "0" }}
+            onClick={() => {
+              setCreate(false);
+            }}
+          >
             <Link to={EVENTS} style={links}>
               Events
             </Link>
           </Button>
-          <Button style={{ padding: "0", marginRight: "20px" }} onClick={() => {
-            setCreate(false)
-          }}>
+          <Button
+            style={{ padding: "0", marginRight: "20px" }}
+            onClick={() => {
+              setCreate(false);
+            }}
+          >
             <Link to={STORIES} style={links}>
               Stories
             </Link>
@@ -134,24 +143,69 @@ const Navbar = () => {
                 MenuListProps={{
                   "aria-labelledby": "basic-button",
                 }}
-              // sx={{ width: "200px" }}
+                // sx={{ width: "200px" }}
               >
                 <div className="menu-div">
                   <div className="menu-avatar">
-                    <Avatar sx={{ marginLeft: '20px' }} />
+                    <Avatar sx={{ marginLeft: "20px" }} />
                     <div className="menu-profile">
-                      <Typography fontSize={14} fontWeight={600}>Ms. Janvi</Typography>
-                      <PrimaryButton size='small' sx={{ width: 'fit-content', textTransform: 'capitalize', fontSize: '10px', borderRadius: '4px', fontWeight: '500' }}>Edit Profile</PrimaryButton>
+                      <Typography fontSize={14} fontWeight={600}>
+                        Ms. Janvi
+                      </Typography>
+                      <PrimaryButton
+                        size="small"
+                        sx={{
+                          width: "fit-content",
+                          textTransform: "capitalize",
+                          fontSize: "10px",
+                          borderRadius: "4px",
+                          fontWeight: "500",
+                        }}
+                        onClick={()=>{
+                          navigate(EDIT_PROFILE);
+                        }}
+                      >
+                        Edit Profile
+                      </PrimaryButton>
                     </div>
                   </div>
-                  <Button sx={{ textTransform: 'capitalize', color: 'black', textAlign: 'left' }} size="small">Your Event</Button>
-                  <Button sx={{ textTransform: 'capitalize', color: 'black', textAlign: 'left' }} size="small">Help</Button>
-                  <Button sx={{ textTransform: 'capitalize', color: 'black', textAlign: 'left' }} size="small" startIcon={<TbLogin />} onClick={() => {
-                    dispatch({
-                      type: ADD_USER,
-                      payload: false,
-                    });
-                  }}>Logout</Button>
+                  <Button
+                    sx={{
+                      textTransform: "capitalize",
+                      color: "black",
+                      textAlign: "left",
+                    }}
+                    size="small"
+                  >
+                    Your Event
+                  </Button>
+                  <Button
+                    sx={{
+                      textTransform: "capitalize",
+                      color: "black",
+                      textAlign: "left",
+                    }}
+                    size="small"
+                  >
+                    Help
+                  </Button>
+                  <Button
+                    sx={{
+                      textTransform: "capitalize",
+                      color: "black",
+                      textAlign: "left",
+                    }}
+                    size="small"
+                    startIcon={<TbLogin />}
+                    onClick={() => {
+                      dispatch({
+                        type: ADD_USER,
+                        payload: false,
+                      });
+                    }}
+                  >
+                    Logout
+                  </Button>
                 </div>
               </Menu>
             </>

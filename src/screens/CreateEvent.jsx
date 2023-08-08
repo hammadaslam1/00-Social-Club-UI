@@ -2,6 +2,7 @@ import { Box, Button, Card, Typography } from "@mui/material";
 import { LocationOn, Upload } from "@mui/icons-material";
 import PrimaryButton from "../components/buttons/PrimaryButton";
 import CreateInput from "../components/inputs/CreateInput";
+import SignupInput from "../components/inputs/SignupInput";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { HOME } from "../routes/Routes";
@@ -32,7 +33,7 @@ const CreateEvent = () => {
         >
           Create New Event
         </Typography>
-        <CreateInput
+        <SignupInput
           type="text"
           sx={{
             backgroundColor: "#f8f8f8",
@@ -44,7 +45,7 @@ const CreateEvent = () => {
           placeholder="Host One"
           label="Host Name"
         />
-        <CreateInput
+        <SignupInput
           type="text"
           sx={{
             backgroundColor: "#f8f8f8",
@@ -56,7 +57,7 @@ const CreateEvent = () => {
           placeholder="Enter your email address"
           label="Email Address"
         />
-        <CreateInput
+        <SignupInput
           type="text"
           sx={{
             backgroundColor: "#f8f8f8",
@@ -69,7 +70,7 @@ const CreateEvent = () => {
           placeholder="Enter your location"
           label="Event Location"
         />
-        <CreateInput
+        <SignupInput
           type="text"
           sx={{
             backgroundColor: "#f8f8f8",
@@ -81,7 +82,7 @@ const CreateEvent = () => {
           placeholder="Event Name"
           label="Event Title"
         />
-        <CreateInput
+        <SignupInput
           type="text"
           sx={{
             backgroundColor: "#f8f8f8",
@@ -96,7 +97,7 @@ const CreateEvent = () => {
           multiline
           rows={4}
         />
-        <CreateInput
+        <SignupInput
           type="text"
           sx={{
             backgroundColor: "#f8f8f8",
