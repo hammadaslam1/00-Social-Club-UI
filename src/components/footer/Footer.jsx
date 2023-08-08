@@ -1,35 +1,52 @@
 import { Box, Button, ButtonGroup, Toolbar, Typography } from "@mui/material";
-import InstagramIcon from '@mui/icons-material/Instagram';
+import InstagramIcon from "@mui/icons-material/Instagram";
 import "./footer.css";
 import { useNavigate } from "react-router-dom";
-import { CONTACT_US } from '../../routes/Routes'
-import FOOTER_IMAGE from '../../assets/logos/footerLogo01.png'
-
+import { ABOUT_US, CONTACT_US } from "../../routes/Routes";
+import FOOTER_IMAGE from "../../assets/logos/footerLogo01.png";
 
 const Footer = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
     <Box
       sx={{
         backgroundColor: "#023d65",
         width: "100%",
-        
       }}
     >
       <Toolbar sx={{ display: "flex", justifyContent: "space-around" }}>
-        
         <div className="footer-image">
-        <img src={FOOTER_IMAGE} />
+          <img src={FOOTER_IMAGE} />
         </div>
         <div className="footer-div">
-          <ButtonGroup variant="plain" className="btn-group" aria-label="text button group">
-            <Button sx={{textTransform: 'capitalize', fontSize: '20px'}} disableRipple>About us</Button>
+          <ButtonGroup
+            variant="plain"
+            className="btn-group"
+            aria-label="text button group"
+          >
+            <Button
+              sx={{ textTransform: "capitalize", fontSize: "20px" }}
+              onClick={() => {
+                navigate(ABOUT_US);
+              }}
+              disableRipple
+            >
+              About us
+            </Button>
             <div className="line"></div>
-            <Button sx={{textTransform: 'capitalize', fontSize: '20px'}} onClick={()=>{
+            <Button
+              sx={{ textTransform: "capitalize", fontSize: "20px" }}
+              onClick={() => {
                 navigate(CONTACT_US);
-            }} disableRipple>Contact us</Button>
+              }}
+              disableRipple
+            >
+              Contact us
+            </Button>
             <div className="line"></div>
-            <Button  disableRipple><InstagramIcon fontSize="medium"/></Button>
+            <Button disableRipple>
+              <InstagramIcon fontSize="medium" />
+            </Button>
           </ButtonGroup>
           <Typography variant="subtitle1" fontWeight={500}>
             By signing up, you agree to <a href="">Terms of Service</a>,{" "}

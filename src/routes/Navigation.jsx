@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "../components/navbar/Navbar";
 import {
+  ABOUT_US,
   CONTACT_US,
   CREATE_EVENT,
   EDIT_PROFILE,
@@ -20,6 +21,7 @@ import Stories from "../screens/Stories";
 import StoryDetail from "../screens/StoryDetail";
 import EditProfile from "../screens/EditProfile";
 import MyEvents from "../screens/MyEvents";
+import AboutUs from "../screens/AboutUs";
 
 const Navigation = () => {
   return (
@@ -33,6 +35,7 @@ const Navigation = () => {
         <Route path={STORY_DETAIL} element={<StoryDetail />} />
         <Route path={CREATE_EVENT} element={<CreateEvent />} />
         <Route path={CONTACT_US} element={<ContactUs />} />
+        <Route path={ABOUT_US} element={<AboutUs />} />
         <Route path={EDIT_PROFILE} element={<EditProfile />} />
         <Route path={MY_EVENTS} element={<MyEvents />} />
       </Routes>

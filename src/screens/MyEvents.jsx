@@ -3,8 +3,9 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import HOST_IMAGE from "../assets/images/hostImage01.png";
 import EVENT_IMAGE from "../assets/images/eventImage01.png";
-import PROFILE_PIC from '../assets/profile/profilePic03.png'
+import PROFILE_PIC from "../assets/profile/profilePic03.png";
 import { LocationOn } from "@mui/icons-material";
+import { IoPeople } from "react-icons/io5";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -52,11 +53,18 @@ const MyEvents = () => {
       <Typography variant="h4" fontWeight={600}>
         Profile
       </Typography>
-      <div style={{padding: '20px'}}>
-        <img src={PROFILE_PIC} width='80px' />
-        <Typography variant="h5" fontWeight={600}>Ms. Janvi</Typography>
-        <Typography  >Member Since March 2023</Typography>
-        <Typography variant="caption" ><LocationOn sx={{color: '#023d65'}} fontSize="small" /> Los Angeles</Typography>
+      <div style={{ padding: "20px", lineHeight: '0px', marginBottom: '20px' }}>
+        <img src={PROFILE_PIC} width="80px" />
+        <Typography variant="h5" fontWeight={600}>
+          Ms. Janvi
+        </Typography>
+        <Typography>Member Since March 2023</Typography>
+        <Typography variant="caption" color='#404040'>
+          <LocationOn sx={{ color: "#023d65" }} fontSize="small" /> Los Angeles
+        </Typography>
+        <Typography variant="caption" sx={{display: 'flex'}}>
+          <IoPeople color="#808080" fontSize="medium" /> <span style={{color: '#404040', marginLeft: '8px'}}>Attended 0 Events</span>
+        </Typography>
       </div>
       <Box sx={{ width: "100%" }}>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
@@ -68,6 +76,7 @@ const MyEvents = () => {
                 textTransform: "capitalize",
                 borderColor: "#023d65",
                 borderRadius: "9px 9px 0 0",
+                color: "#404040",
                 "&:focus": {
                   fontWeight: "600",
                   color: "#000",
@@ -82,6 +91,7 @@ const MyEvents = () => {
                 textTransform: "capitalize",
                 borderColor: "#023d65",
                 borderRadius: "9px 9px 0 0",
+                color: "#404040",
                 "&:focus": {
                   fontWeight: "600",
                   color: "#000",
