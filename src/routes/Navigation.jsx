@@ -6,6 +6,7 @@ import {
   EDIT_PROFILE,
   EVENTS,
   HOME,
+  MY_EVENTS,
   STORIES,
   STORY_DETAIL,
   VENUES,
@@ -18,6 +19,7 @@ import Events from "../screens/Events";
 import Stories from "../screens/Stories";
 import StoryDetail from "../screens/StoryDetail";
 import EditProfile from "../screens/EditProfile";
+import MyEvents from "../screens/MyEvents";
 
 const Navigation = () => {
   return (
@@ -32,6 +34,7 @@ const Navigation = () => {
         <Route path={CREATE_EVENT} element={<CreateEvent />} />
         <Route path={CONTACT_US} element={<ContactUs />} />
         <Route path={EDIT_PROFILE} element={<EditProfile />} />
+        <Route path={MY_EVENTS} element={<MyEvents />} />
       </Routes>
       <Footer />
     </Router>

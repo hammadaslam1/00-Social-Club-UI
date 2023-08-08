@@ -6,3 +6,4 @@ export const STORIES = "/stories";
 export const STORY_DETAIL = "/story-details";
 export const CREATE_EVENT = "/create-event";
 export const EDIT_PROFILE = "/edit-profile";
+export const MY_EVENTS = "/my-events";
