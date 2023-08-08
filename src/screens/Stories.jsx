@@ -96,8 +96,9 @@ const Stories = () => {
                 </Typography>
               </CardContent>
             </CardActionArea>
+            <div style={{width: '90%', margin: 'auto', borderBottom: '1px solid #d0d0d0'}}></div>
             <CardActions
-              sx={{ display: "flex", justifyContent: "space-between" }}
+              sx={{ display: "flex", justifyContent: "space-between", }}
             >
               <Typography sx={{ display: "flex" }} fontSize="12px">
                 <RiCalendarTodoFill fontSize="16px" /> 03 April, 2018

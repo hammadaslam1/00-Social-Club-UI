@@ -3,9 +3,12 @@ import "./screens.css";
 import Search from "../components/inputs/Search";
 import TuneIcon from "@mui/icons-material/Tune";
 import VENUE_IMAGE from "../assets/images/eventImage01.png";
+import { useState } from "react";
+import VenueDialog from "../components/dialogs/VenueDialog";
 // import LOGO from "../assets/logos/footerLogo01.png";
 
 const Venues = () => {
+  const [openDialog, setOpenDialog] = useState(false);
   const dates = [
     "Friday, march 10",
     "Saturday, March 11",
@@ -40,7 +43,14 @@ const Venues = () => {
               },
             }}
           />
-          <IconButton size="large" sx={{ gridColumn: "10/11" }} disableRipple>
+          <IconButton
+            size="large"
+            sx={{ gridColumn: "10/11" }}
+            onClick={() => {
+              setOpenDialog(true);
+            }}
+            disableRipple
+          >
             <TuneIcon />
           </IconButton>
           <Typography
@@ -76,7 +86,7 @@ const Venues = () => {
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "space-between",
-                  marginLeft: '10px',
+                  marginLeft: "10px",
                 }}
               >
                 <div style={{ display: "flex", flexDirection: "column" }}>
@@ -91,6 +101,14 @@ const Venues = () => {
             </div>
           </>
         ))}
+        {openDialog ? (
+          <VenueDialog
+            openDialog={openDialog}
+            setOpenDialog={setOpenDialog}
+          />
+        ) : (
+          ""
+        )}
       </Box>
     </Card>
   );

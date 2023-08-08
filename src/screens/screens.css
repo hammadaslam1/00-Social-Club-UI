@@ -57,4 +57,11 @@
   flex-direction: column;
   width: 850px;
   margin: 30px auto;
+  line-height: 0px;
+}
+
+label{
+  color: #707070;
+  margin: 20px 0 5px 0;
+  font-size: 14px;
 }

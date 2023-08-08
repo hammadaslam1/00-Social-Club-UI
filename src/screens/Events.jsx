@@ -2,10 +2,14 @@ import { Box, Card, IconButton, Switch, Typography } from "@mui/material";
 import "./screens.css";
 import Search from "../components/inputs/Search";
 import TuneIcon from "@mui/icons-material/Tune";
-import EVENT_IMAGE from '../assets/images/eventImage01.png'
+import EVENT_IMAGE from "../assets/images/eventImage01.png";
+import VenueDialog from "../components/dialogs/VenueDialog";
+import { useState } from "react";
 // import LOGO from "../assets/logos/footerLogo01.png";
 
 const Events = () => {
+  const [openDialog, setOpenDialog] = useState(false);
+
   const dates = [
     "Friday, march 10",
     "Saturday, March 11",
@@ -40,7 +44,14 @@ const Events = () => {
               },
             }}
           />
-          <IconButton size="large" sx={{ gridColumn: "10/11" }} disableRipple>
+          <IconButton
+            size="large"
+            sx={{ gridColumn: "10/11" }}
+            onClick={() => {
+              setOpenDialog(true);
+            }}
+            disableRipple
+          >
             <TuneIcon />
           </IconButton>
           <Typography
@@ -70,13 +81,13 @@ const Events = () => {
                 color: "#404040",
               }}
             >
-              <img src={EVENT_IMAGE} width='180px' />
+              <img src={EVENT_IMAGE} width="180px" />
               <div
                 style={{
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "space-between",
-                  marginLeft: '10px',
+                  marginLeft: "10px",
                 }}
               >
                 <div style={{ display: "flex", flexDirection: "column" }}>
@@ -91,6 +102,11 @@ const Events = () => {
             </div>
           </>
         ))}
+        {openDialog ? (
+          <VenueDialog openDialog={openDialog} setOpenDialog={setOpenDialog} />
+        ) : (
+          ""
+        )}
       </Box>
     </Card>
   );
