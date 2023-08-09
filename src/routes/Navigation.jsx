@@ -9,6 +9,7 @@ import {
   EVENT_DESC,
   HOME,
   MY_EVENTS,
+  PRIVACY,
   STORIES,
   STORY_DETAIL,
   VENUES,
@@ -25,6 +26,7 @@ import MyEvents from "../screens/MyEvents";
 import AboutUs from "../screens/AboutUs";
 import Home from "../screens/Home";
 import EventDescription from "../screens/EventDescription";
+import Privacy from "../screens/Privacy";
 
 const Navigation = () => {
   return (
@@ -42,6 +44,7 @@ const Navigation = () => {
         <Route path={EDIT_PROFILE} element={<EditProfile />} />
         <Route path={MY_EVENTS} element={<MyEvents />} />
         <Route path={EVENT_DESC} element={<EventDescription />} />
+        <Route path={PRIVACY} element={<Privacy />} />
       </Routes>
       <Footer />
     </Router>
