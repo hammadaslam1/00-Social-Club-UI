@@ -22,13 +22,14 @@ import StoryDetail from "../screens/StoryDetail";
 import EditProfile from "../screens/EditProfile";
 import MyEvents from "../screens/MyEvents";
 import AboutUs from "../screens/AboutUs";
+import Home from "../screens/Home";
 
 const Navigation = () => {
   return (
     <Router>
       <Navbar />
       <Routes>
-        <Route exact path={HOME} />
+        <Route exact path={HOME} element={<Home />} />
         <Route path={VENUES} element={<Venues />} />
         <Route path={EVENTS} element={<Events />} />
         <Route path={STORIES} element={<Stories />} />

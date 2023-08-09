@@ -1,4 +1,5 @@
 import scLogo01 from "../../assets/logos/scLogo01.png";
+import PROFILE_PIC from '../../assets/profile/profilePic03.png'
 import "./navbar.css";
 import { TbLogin } from "react-icons/tb";
 import Search from "../inputs/Search";
@@ -133,7 +134,7 @@ const Navbar = () => {
                 endIcon={<KeyboardArrowDownIcon sx={{ color: "#f5fadf" }} />}
                 disableRipple={true}
               >
-                <Avatar />
+                <Avatar src={PROFILE_PIC} sx={{ width: 52, height: 52 }} />
               </Button>
               <Menu
                 id="basic-menu"
@@ -147,7 +148,7 @@ const Navbar = () => {
               >
                 <div className="menu-div">
                   <div className="menu-avatar">
-                    <Avatar sx={{ marginLeft: "20px" }} />
+                    <Avatar src={PROFILE_PIC} sx={{ marginLeft: "20px", width: 52, height: 52 }}/>
                     <div className="menu-profile">
                       <Typography fontSize={14} fontWeight={600}>
                         Ms. Janvi
@@ -172,9 +173,10 @@ const Navbar = () => {
                   </div>
                   <Button
                     sx={{
+                      textAlign: "left",
                       textTransform: "capitalize",
                       color: "black",
-                      textAlign: "left",
+                      width: '100%'
                     }}
                     size="small"
                     onClick={()=>{

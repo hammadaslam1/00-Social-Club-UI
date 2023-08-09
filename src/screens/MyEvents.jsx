@@ -1,4 +1,4 @@
-import { Box, Card, Tab, Tabs, Typography } from "@mui/material";
+import { Box, Card, Divider, Tab, Tabs, Typography } from "@mui/material";
 import { useState } from "react";
 import PropTypes from "prop-types";
 import HOST_IMAGE from "../assets/images/hostImage01.png";
@@ -53,17 +53,20 @@ const MyEvents = () => {
       <Typography variant="h4" fontWeight={600}>
         Profile
       </Typography>
-      <div style={{ padding: "20px", lineHeight: '0px', marginBottom: '20px' }}>
+      <div style={{ padding: "20px", lineHeight: "0px", marginBottom: "20px" }}>
         <img src={PROFILE_PIC} width="80px" />
         <Typography variant="h5" fontWeight={600}>
           Ms. Janvi
         </Typography>
         <Typography>Member Since March 2023</Typography>
-        <Typography variant="caption" color='#404040'>
+        <Typography variant="caption" color="#404040">
           <LocationOn sx={{ color: "#023d65" }} fontSize="small" /> Los Angeles
         </Typography>
-        <Typography variant="caption" sx={{display: 'flex'}}>
-          <IoPeople color="#808080" fontSize="medium" /> <span style={{color: '#404040', marginLeft: '8px'}}>Attended 0 Events</span>
+        <Typography variant="caption" sx={{ display: "flex" }}>
+          <IoPeople color="#808080" fontSize="medium" />{" "}
+          <span style={{ color: "#404040", marginLeft: "8px" }}>
+            Attended 0 Events
+          </span>
         </Typography>
       </div>
       <Box sx={{ width: "100%" }}>
@@ -143,6 +146,7 @@ const MyEvents = () => {
                   <Typography variant="caption" color="#404040">
                     9 attendees
                   </Typography>
+                  <Divider />
                 </div>
               </div>
             </>
@@ -190,6 +194,7 @@ const MyEvents = () => {
                   <Typography variant="caption" color="#404040">
                     9 attendees
                   </Typography>
+                  <Divider />
                 </div>
               </div>
             </>

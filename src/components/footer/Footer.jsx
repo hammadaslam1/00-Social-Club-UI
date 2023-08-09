@@ -2,7 +2,7 @@ import { Box, Button, ButtonGroup, Toolbar, Typography } from "@mui/material";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import "./footer.css";
 import { useNavigate } from "react-router-dom";
-import { ABOUT_US, CONTACT_US } from "../../routes/Routes";
+import { ABOUT_US, CONTACT_US, HOME } from "../../routes/Routes";
 import FOOTER_IMAGE from "../../assets/logos/footerLogo01.png";
 
 const Footer = () => {
@@ -16,7 +16,9 @@ const Footer = () => {
     >
       <Toolbar sx={{ display: "flex", justifyContent: "space-around" }}>
         <div className="footer-image">
-          <img src={FOOTER_IMAGE} />
+          <img src={FOOTER_IMAGE} style={{cursor: 'pointer'}} onClick={()=>{
+            navigate(HOME)
+          }} />
         </div>
         <div className="footer-div">
           <ButtonGroup

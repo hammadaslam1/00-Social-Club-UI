@@ -29,22 +29,22 @@
   margin: auto;
 }
 
-.drag-btn{
+.drag-btn {
   color: gray;
   padding: 50px;
 }
-.drag-btn:hover{
+.drag-btn:hover {
   background-color: #f5f5f5;
 }
 
-.story-head{
+.story-head {
   display: grid;
   grid-template-columns: repeat(2, 2fr);
   gap: 30px;
   margin-bottom: 30px;
   line-height: 0px;
 }
-.story-body{
+.story-body {
   display: grid;
   grid-template-columns: repeat(4, 2fr);
   gap: 20px;
@@ -60,7 +60,7 @@
   line-height: 0px;
 }
 
-label{
+label {
   color: #707070;
   margin: 20px 0 5px 0;
   font-size: 14px;
@@ -73,17 +73,17 @@ label{
   margin: 20px auto;
 }
 
-.profile-lbl{
+.profile-lbl {
   color: #707070;
   margin: 20px 0 5px 0;
   font-size: 16px;
 }
 
-.events{
+.events {
   padding: 20px;
 }
 
-.about-header{
+.about-header {
   height: 67.1vh;
   display: flex;
   justify-content: center;
@@ -91,20 +91,20 @@ label{
   color: #fff;
   margin: 0;
   padding: 0;
-  background-image: url('../assets/images/aboutUs02.png');
+  background-image: url("../assets/images/aboutUs02.png");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
 }
-.about-body{
+.about-body {
   height: 67.1vh;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  
+
   padding: 100px 80px 40px 80px;
 }
-.about-body-mid{
+.about-body-mid {
   height: 67.1vh;
   display: flex;
   align-items: center;
@@ -121,26 +121,6 @@ label{
   border-top-right-radius: 8px;
   height: 100%;
 }
-.glass{
-  /* position: relative; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
-.glass:before {
-  content: ' ';
-  display: block;
-  background: #ffffff29;
-  width: 360px;
-  height: 240px;
-  /* position: absolute; */
-  top: 0;
-  right: -25px;
-  /* transform: skew(6deg); */
-  border-radius: 8px;
-  /* z-index: -1; */
-}
 .trapezoid {
   position: relative;
   display: flex;
@@ -150,7 +130,7 @@ label{
   /* background: #023d65; */
 }
 .trapezoid:before {
-  content: ' ';
+  content: " ";
   display: block;
   background: #023d65;
   width: 40px;
@@ -163,7 +143,7 @@ label{
   z-index: -1;
 }
 .trapezoid:after {
-  content: ' ';
+  content: " ";
   display: block;
   background: #023d65;
   width: 40px;
@@ -174,4 +154,30 @@ label{
   transform: skew(6deg);
   border-radius: 8px;
   z-index: -1;
+}
+
+.home-event-body {
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  gap: 30px;
+  padding: 50px 100px;
+  letter-spacing: 0px;
+  line-height: 0px;
+}
+
+.parent {
+  height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.child {
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.action-area:hover .child {
+  transform: scale(1.5);
+  transition: all 0.5s;
 }

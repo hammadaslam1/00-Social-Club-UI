@@ -1,0 +1,373 @@
+import {
+  Box,
+  Button,
+  Card,
+  CardActionArea,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Typography,
+} from "@mui/material";
+import PrimaryButton from "../components/buttons/PrimaryButton";
+import SLIDE_IMAGE_1 from "../assets/slides/slide02.png";
+import SLIDE_IMAGE_2 from "../assets/images/detail02.png";
+import SLIDE_IMAGE_3 from "../assets/images/storiesHead01.png";
+import SLIDE_LOGO from "../assets/slides/slideLogo02.png";
+import SLIDE_ICON from "../assets/slides/slideIcon02.png";
+import EVENT_IMAGE from "../assets/images/eventImage02.png";
+import Carousel from "react-material-ui-carousel";
+import { ArrowBack, ArrowForward, ChevronLeft, ChevronRight } from "@mui/icons-material";
+import { RiCalendarTodoFill } from "react-icons/ri";
+
+const Home = () => {
+  const slides = [SLIDE_IMAGE_1, SLIDE_IMAGE_2];
+  const events = [EVENT_IMAGE, SLIDE_IMAGE_2];
+  return (
+    <div style={{ display: "flex", flexDirection: "column", }}>
+      <Carousel
+        NextIcon={<ArrowForward />}
+        PrevIcon={<ArrowBack />}
+        navButtonsProps={{
+          style: {
+            backgroundColor: "#fff",
+            opacity: 1,
+            borderRadius: "50%",
+            color: "#023d65",
+            "&:hover": {
+              backgroundColor: "#023d65",
+              color: "#fff",
+              opacity: 1,
+            },
+          },
+        }}
+        navButtonsWrapperProps={{
+          style: {
+            bottom: 10,
+            top: "unset",
+          },
+        }}
+        indicatorIconButtonProps={{
+          style: {
+            bottom: 60,
+            zIndex: 1,
+            left: 550,
+            width: "12px",
+            height: "12px",
+            color: "transparent",
+            border: "1px solid #fff",
+            margin: "2px",
+          },
+        }}
+        indicatorContainerProps={{
+            style:{
+            backgroundColor: '#fff',
+
+            }
+        }}
+        activeIndicatorIconButtonProps={{
+          style: {
+            width: "15px",
+            height: "15px",
+            color: "#fff",
+            border: "1px solid #fff",
+          },
+        }}
+        // indicators={false}
+      >
+        {slides?.map((data, i) => (
+          <Box
+            key={i}
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              height: "100vh",
+              backgroundImage: `url(${data})`,
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+              backgroundSize: "cover",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                height: "95vh",
+              }}
+            >
+              <div style={{ flex: 1, padding: "90px" }}>
+                <Typography
+                  variant="h3"
+                  color="#fff"
+                  sx={{ marginBottom: "20px" }}
+                >
+                  Let's Connect with the Alcohol Free World Outside your Door
+                </Typography>
+                <PrimaryButton sx={{ marginTop: "30px" }}>
+                  Create New Event
+                </PrimaryButton>
+              </div>
+              <div
+                style={{
+                  flex: 1,
+                  padding: "20px",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <img src={SLIDE_LOGO} width="200px" />
+              </div>
+            </div>
+            <img
+              src={SLIDE_ICON}
+              width="48px"
+              style={{ margin: "auto 20px 20px auto" }}
+            />
+          </Box>
+        ))}
+      </Carousel>
+      <div style={{backgroundColor: '#fff'}}>
+      <Typography variant="h4" fontWeight={600} textAlign={"center"} marginTop='20px'>
+        Events and Experiences
+      </Typography>
+      <Carousel
+        NextIcon={<ChevronRight />}
+        PrevIcon={<ChevronLeft />}
+        navButtonsProps={{
+          style: {
+            backgroundColor: "#fff",
+            opacity: 1,
+            borderRadius: "50%",
+            color: "#616161",
+            boxShadow: '5px 10px 20px #00000029',
+            "&:hover": {
+              backgroundColor: "#023d65",
+              color: "#fff",
+              opacity: 1,
+            },
+          },
+        }}
+        navButtonsWrapperProps={{
+          style: {
+            bottom: 10,
+            top: "unset",
+          },
+        }}
+        indicatorIconButtonProps={{
+          style: {
+            bottom: 'unset',
+            top: -440,
+            zIndex: 5,
+            // left: 550,
+            width: "60px",
+            height: "4px",
+            backgroundColor: "#f5fadf",
+            color: "transparent",
+            borderRadius: "10px",
+            // border: "1px solid #023d65",
+            // margin: "2px",
+          },
+        }}
+        indicatorContainerProps={{
+          style: {
+            width: "fit-content",
+            bottom: 'unset',
+            
+            
+            // padding: "1px",
+            // borderRadius: "20px",
+            margin: "auto",
+            // backgroundColor: "#fff",
+            marginTop: "-40px",
+            display: "flex",
+            alignItems: "center",
+            marginBottom: "20px",
+            // border: "2px solid #023d65",
+          },
+        }}
+        activeIndicatorIconButtonProps={{
+          style: {
+            width: "70px",
+            borderRadius: "10px",
+            backgroundColor: "#023d65",
+            height: "6px",
+            // color: "#023d65",
+            // borderRadius: '0',
+            border: "none",
+          },
+        }}
+        // indicators={false}
+      >
+        {events.map((dataj, j) => (
+          <div className="home-event-body">
+            {new Array(3).fill(0).map((datai, i) => (
+              <Card
+                sx={{
+                  boxShadow: "0px 3px 30px #0000001F",
+                  borderRadius: "20px",
+                }}
+                elevation={0}
+                key={i}
+              >
+                <CardActionArea className="action-area">
+                  <div style={{ padding: "15px 15px 0 15px" }}>
+                    <div className="parent">
+                      <div
+                        className="child"
+                        style={{
+                          backgroundImage: `url(${dataj})`,
+                        }}
+                      ></div>
+                    </div>
+                  </div>
+                    <div style={{display: 'flex', margin: '6px 22px 0 22px', justifyContent: 'space-between'}}>
+                        <Typography fontSize='15px' fontWeight={600} color='#023d65'>Feb 21, 23</Typography>
+                        <Typography fontSize='15px' fontWeight={600} color='#023d65'>Join</Typography>
+                    </div>
+                  <CardContent>
+                    <Typography
+                      variant="h6"
+                      sx={{ color: "#404040", fontWeight: 600 }}
+                    >
+                      Event Heading
+                    </Typography>
+                    <Typography variant="caption" color="text.secondary">
+                      Lorem ipsum dolor sit amet, consetetur sadip sci elitr,
+                      sed diam nonumy eirmod tem por invidunt ut labore et
+                      dolore magna aliquyam erat, seddia voluptua. At vero eos
+                      et accusam et justo duo dolores et ea rebum. Stet clita
+                      kasd
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            ))}
+          </div>
+        ))}
+      </Carousel>
+      </div>
+      <div style={{marginTop:'40px'}}>
+      <Typography variant="h4" fontWeight={600} textAlign={"center"}>
+        Events and Experiences
+      </Typography>
+      <Carousel
+        NextIcon={<ChevronRight />}
+        PrevIcon={<ChevronLeft />}
+        navButtonsProps={{
+          style: {
+            backgroundColor: "#fff",
+            opacity: 1,
+            borderRadius: "50%",
+            color: "#616161",
+            boxShadow: '5px 10px 20px #00000029',
+            "&:hover": {
+              backgroundColor: "#023d65",
+              color: "#fff",
+              opacity: 1,
+            },
+          },
+        }}
+        navButtonsWrapperProps={{
+          style: {
+            bottom: 10,
+            top: "unset",
+          },
+        }}
+        indicatorIconButtonProps={{
+          style: {
+            bottom: 'unset',
+            top: -440,
+            zIndex: 5,
+            // left: 550,
+            width: "60px",
+            height: "4px",
+            backgroundColor: "#f5fadf",
+            color: "transparent",
+            borderRadius: "10px",
+            // border: "1px solid #023d65",
+            // margin: "2px",
+          },
+        }}
+        indicatorContainerProps={{
+          style: {
+            width: "fit-content",
+            bottom: 'unset',
+            
+            
+            // padding: "1px",
+            // borderRadius: "20px",
+            margin: "auto",
+            // backgroundColor: "#fff",
+            marginTop: "-40px",
+            display: "flex",
+            alignItems: "center",
+            marginBottom: "20px",
+            // border: "2px solid #023d65",
+          },
+        }}
+        activeIndicatorIconButtonProps={{
+          style: {
+            width: "70px",
+            borderRadius: "10px",
+            backgroundColor: "#023d65",
+            height: "6px",
+            // color: "#023d65",
+            // borderRadius: '0',
+            border: "none",
+          },
+        }}
+        // indicators={false}
+      >
+        {events.map((dataj, j) => (
+          <div className="home-event-body">
+            {new Array(3).fill(0).map((datai, i) => (
+              <Card
+                sx={{
+                  boxShadow: "0px 3px 30px #0000001F",
+                  borderRadius: "20px",
+                }}
+                elevation={0}
+                key={i}
+              >
+                <CardActionArea className="action-area">
+                  <div style={{ padding: "15px 15px 0 15px" }}>
+                    <div className="parent">
+                      <div
+                        className="child"
+                        style={{
+                          backgroundImage: `url(${dataj})`,
+                        }}
+                      ></div>
+                    </div>
+                  </div>
+                    <div style={{display: 'flex', margin: '6px 22px 0 22px', justifyContent: 'space-between'}}>
+                        <Typography fontSize='15px' fontWeight={600} color='#023d65'>Feb 21, 23</Typography>
+                        <Typography fontSize='15px' fontWeight={600} color='#023d65'>Join</Typography>
+                    </div>
+                  <CardContent>
+                    <Typography
+                      variant="h6"
+                      sx={{ color: "#404040", fontWeight: 600 }}
+                    >
+                      Event Heading
+                    </Typography>
+                    <Typography variant="caption" color="text.secondary">
+                      Lorem ipsum dolor sit amet, consetetur sadip sci elitr,
+                      sed diam nonumy eirmod tem por invidunt ut labore et
+                      dolore magna aliquyam erat, seddia voluptua. At vero eos
+                      et accusam et justo duo dolores et ea rebum. Stet clita
+                      kasd
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            ))}
+          </div>
+        ))}
+      </Carousel>
+      </div>
+      
+    </div>
+  );
+};
+
+export default Home;
