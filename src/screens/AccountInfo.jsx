@@ -1,12 +1,19 @@
-import { Avatar, Box, Card, Checkbox, FormControlLabel, FormLabel, IconButton, Typography } from "@mui/material";
+import { KeyboardArrowDown } from "@mui/icons-material";
+import {
+  Box,
+  Card,
+  Checkbox,
+  FormControl,
+  FormControlLabel,
+  FormLabel,
+  Typography,
+} from "@mui/material";
 import SignupInput from "../components/inputs/SignupInput";
 import PrimaryButton from "../components/buttons/PrimaryButton";
-import PROFILE_PIC from "../assets/profile/profilePic01.png";
+import { Option, Select } from "@mui/joy";
 import "./screens.css";
-import { Edit, KeyboardArrowDown } from "@mui/icons-material";
-import { Option, Select, selectClasses } from "@mui/joy";
 
-const EditProfile = () => {
+const AccountInfo = () => {
   return (
     <Card className="create-main" elevation={false}>
       <Box className="edit-box">
@@ -18,25 +25,9 @@ const EditProfile = () => {
             marginBottom: "20px",
           }}
         >
-          Edit Profile
+          Account Information
         </Typography>
-        <div style={{ alignSelf: "center", height: "200px" }}>
-          <img
-            src={PROFILE_PIC}
-            height="200px"
-            width="200px"
-            style={{ borderRadius: "50%" }}
-          />
-          <IconButton
-            sx={{
-              backgroundColor: "#023d65",
-              margin: "-90px 0 0 150px",
-              "&:hover": { backgroundColor: "#023d65" },
-            }}
-          >
-            <Edit sx={{ color: "#fff" }} />
-          </IconButton>
-        </div>
+
         <SignupInput
           type="text"
           sx={{
@@ -67,13 +58,15 @@ const EditProfile = () => {
             borderRadius: "8px",
             border: "1px solid transparent",
             marginTop: "0px",
-            
+
             "&:focus": { border: "1px solid #023D65", outline: "none" },
           }}
           placeholder="Enter zip code"
           label="Zip Code"
         />
-        <label htmlFor="" className="profile-lbl">Relationship with Alcohol</label>
+        <label htmlFor="" className="profile-lbl">
+          Relationship with Alcohol
+        </label>
         <Select
           placeholder="relationship with alcohol"
           variant="plain"
@@ -83,7 +76,7 @@ const EditProfile = () => {
             borderRadius: "8px",
             border: "1px solid transparent",
             marginTop: "0px",
-            marginBottom: "30px",
+            // marginBottom: "30px",
             "&:focus": { border: "1px solid #023D65", outline: "none" },
           }}
         >
@@ -95,6 +88,7 @@ const EditProfile = () => {
           <Option value="option six">Option Six</Option>
           <Option value="option seven">Option Seven</Option>
         </Select>
+        {/* <label htmlFor="">Gender</label> */}
         <FormLabel
             sx={{ color: "#707070", fontSize: "14px", marginBottom: "2px" }}
           >
@@ -118,6 +112,41 @@ const EditProfile = () => {
               label="Female"
             />
         </div>
+        <FormControl>
+          <FormLabel
+            sx={{ color: "#707070", fontSize: "14px", marginBottom: "2px" }}
+          >
+            Relationship with alcohol
+          </FormLabel>
+          <div
+          className="checks"
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+            }}
+          >
+            <FormControlLabel
+              sx={{ "& .MuiFormControlLabel-label": { fontSize: 14 } }}
+              control={<Checkbox size="medium" sx={{ color: "#023d65" }} />}
+              label="Events near me"
+            />
+            <FormControlLabel
+              sx={{ "& .MuiFormControlLabel-label": { fontSize: 14 } }}
+              control={<Checkbox size="medium" sx={{ color: "#023d65" }} />}
+              label="Host Event"
+            />
+            <FormControlLabel
+              sx={{ "& .MuiFormControlLabel-label": { fontSize: 14 } }}
+              control={<Checkbox size="medium" sx={{ color: "#023d65" }} />}
+              label="Date Night"
+            />
+            <FormControlLabel
+              sx={{ "& .MuiFormControlLabel-label": { fontSize: 14 } }}
+              control={<Checkbox size="medium" sx={{ color: "#023d65" }} />}
+              label="Find groups near me"
+            />
+          </div>
+        </FormControl>
         <PrimaryButton
           sx={{
             width: "100%",
@@ -132,4 +161,4 @@ const EditProfile = () => {
   );
 };
 
-export default EditProfile;
+export default AccountInfo;

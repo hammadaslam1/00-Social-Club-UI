@@ -12,6 +12,7 @@ import PrimaryButton from "../components/buttons/PrimaryButton";
 import LoginInput from "../components/inputs/LoginInput";
 import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 import { useState } from "react";
+import "./screens.css";
 
 const StoryDetail = () => {
   const [expanded, setExpanded] = useState(false);
@@ -114,7 +115,6 @@ const StoryDetail = () => {
                       display: "grid",
                       gridTemplateColumns: "repeat(8, 2fr)",
                       gap: "10px",
-                      // alignItems: "center",
                     }}
                   >
                     <div>

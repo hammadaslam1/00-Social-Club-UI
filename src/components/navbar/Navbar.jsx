@@ -13,7 +13,7 @@ import {
   Typography,
 } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
-import { CREATE_EVENT, EDIT_PROFILE, EVENTS, MY_EVENTS, STORIES, VENUES } from "../../routes/Routes";
+import { ACCOUNT_INFO, CREATE_EVENT, EDIT_PROFILE, EVENTS, MY_EVENTS, STORIES, VENUES } from "../../routes/Routes";
 import SecondaryButton from "../buttons/SecondaryButton";
 import Login from "../dialogs/Login";
 import { useState } from "react";
@@ -171,6 +171,21 @@ const Navbar = () => {
                       </PrimaryButton>
                     </div>
                   </div>
+                  <Button
+                    sx={{
+                      textAlign: "left",
+                      textTransform: "capitalize",
+                      color: "black",
+                      width: '100%'
+                    }}
+                    size="small"
+                    onClick={()=>{
+                      setAnchorEl(null);
+                      navigate(ACCOUNT_INFO)
+                    }}
+                  >
+                    Account Information
+                  </Button>
                   <Button
                     sx={{
                       textAlign: "left",

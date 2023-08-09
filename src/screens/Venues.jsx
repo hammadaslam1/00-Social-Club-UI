@@ -5,7 +5,6 @@ import TuneIcon from "@mui/icons-material/Tune";
 import VENUE_IMAGE from "../assets/images/eventImage01.png";
 import { useState } from "react";
 import VenueDialog from "../components/dialogs/VenueDialog";
-// import LOGO from "../assets/logos/footerLogo01.png";
 
 const Venues = () => {
   const [openDialog, setOpenDialog] = useState(false);

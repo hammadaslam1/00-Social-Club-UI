@@ -87,7 +87,6 @@ const CreateEvent = () => {
           sx={{
             backgroundColor: "#f8f8f8",
             borderRadius: "8px",
-            // height: '140px',
             border: "1px solid transparent",
             marginBottom: "10px",
             "&:focus": { border: "1px solid #023D65", outline: "none" },
@@ -102,7 +101,6 @@ const CreateEvent = () => {
           sx={{
             backgroundColor: "#f8f8f8",
             borderRadius: "8px",
-            // height: '140px',
             border: "1px solid transparent",
             marginBottom: "10px",
             "&:focus": { border: "1px solid #023D65", outline: "none" },
@@ -188,7 +186,6 @@ const CreateEvent = () => {
             label="The Event is Paid"
             sx={{
               fontWeight: "600",
-              // backgroundColor: "#f5fadf",
               borderRadius: "5px",
               padding: "5px",
               width: '100%'
@@ -199,7 +196,6 @@ const CreateEvent = () => {
             label="The Event is Free"
             sx={{
               fontWeight: "600",
-              // backgroundColor: "#f5fadf",
               borderRadius: "5px",
               padding: "5px",
               width: '100%'

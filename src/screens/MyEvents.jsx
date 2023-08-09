@@ -6,6 +6,7 @@ import EVENT_IMAGE from "../assets/images/eventImage01.png";
 import PROFILE_PIC from "../assets/profile/profilePic03.png";
 import { LocationOn } from "@mui/icons-material";
 import { IoPeople } from "react-icons/io5";
+import "./screens.css";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;

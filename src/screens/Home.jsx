@@ -1,6 +1,5 @@
 import {
   Box,
-  Button,
   Card,
   CardActionArea,
   CardActions,
@@ -24,9 +23,9 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "@mui/icons-material";
-import { RiCalendarTodoFill } from "react-icons/ri";
 import { CREATE_EVENT, EVENT_DESC } from "../routes/Routes";
 import { useNavigate } from "react-router-dom";
+import "./screens.css";
 
 const Home = () => {
     const navigate = useNavigate()
@@ -81,7 +80,6 @@ const Home = () => {
             border: "1px solid #fff",
           },
         }}
-        // indicators={false}
       >
         {slides?.map((data, i) => (
           <Box
@@ -173,30 +171,22 @@ const Home = () => {
               bottom: "unset",
               top: -440,
               zIndex: 5,
-              // left: 550,
               width: "60px",
               height: "4px",
               backgroundColor: "#f5fadf",
               color: "transparent",
               borderRadius: "10px",
-              // border: "1px solid #023d65",
-              // margin: "2px",
             },
           }}
           indicatorContainerProps={{
             style: {
               width: "fit-content",
               bottom: "unset",
-
-              // padding: "1px",
-              // borderRadius: "20px",
               margin: "auto",
-              // backgroundColor: "#fff",
               marginTop: "-40px",
               display: "flex",
               alignItems: "center",
               marginBottom: "20px",
-              // border: "2px solid #023d65",
             },
           }}
           activeIndicatorIconButtonProps={{
@@ -205,12 +195,9 @@ const Home = () => {
               borderRadius: "10px",
               backgroundColor: "#023d65",
               height: "6px",
-              // color: "#023d65",
-              // borderRadius: '0',
               border: "none",
             },
           }}
-          // indicators={false}
         >
           {events.map((dataj, j) => (
             <div className="home-event-body">
@@ -313,30 +300,22 @@ const Home = () => {
               bottom: "unset",
               top: -440,
               zIndex: 5,
-              // left: 550,
               width: "60px",
               height: "4px",
               backgroundColor: "#f5fadf",
               color: "transparent",
               borderRadius: "10px",
-              // border: "1px solid #023d65",
-              // margin: "2px",
             },
           }}
           indicatorContainerProps={{
             style: {
               width: "fit-content",
               bottom: "unset",
-
-              // padding: "1px",
-              // borderRadius: "20px",
               margin: "auto",
-              // backgroundColor: "#fff",
               marginTop: "-40px",
               display: "flex",
               alignItems: "center",
               marginBottom: "20px",
-              // border: "2px solid #023d65",
             },
           }}
           activeIndicatorIconButtonProps={{
@@ -345,12 +324,9 @@ const Home = () => {
               borderRadius: "10px",
               backgroundColor: "#023d65",
               height: "6px",
-              // color: "#023d65",
-              // borderRadius: '0',
               border: "none",
             },
           }}
-          // indicators={false}
         >
           {events.map((dataj, j) => (
             <div className="home-event-body">
@@ -451,7 +427,6 @@ const Home = () => {
             },
           }}
           navButtonsAlwaysInvisible
-        //   indicators={false}
         >
           {new Array(3).fill(0).map((data, i) => (
             <div style={{ padding: "10px 100px", margin: '20px', color: '#f3f3f3', zIndex: 2 }}>

@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import PARTY_IMAGE from "../assets/images/eventImage02.png";
+import "./screens.css";
 
 const AboutUs = () => {
   return (
@@ -19,12 +20,18 @@ const AboutUs = () => {
               }}
             />
           </div>
-          <div className="trapezoid" style={{ height: "100%", width: "360px" }}>
-            {/* <div className="trapezoid"></div> */}
-          </div>
+          <div
+            className="trapezoid"
+            style={{ height: "100%", width: "360px" }}
+          ></div>
         </div>
-        <div style={{ width: "380px", marginTop: '-60px' }}>
-          <Typography fontSize="36px" fontWeight={700} color="#023d65"  sx={{marginBottom: '20px'}}>
+        <div style={{ width: "380px", marginTop: "-60px" }}>
+          <Typography
+            fontSize="36px"
+            fontWeight={700}
+            color="#023d65"
+            sx={{ marginBottom: "20px" }}
+          >
             Who we are?
           </Typography>
           <Typography fontSize="12px" color="#333333">
@@ -42,20 +49,23 @@ const AboutUs = () => {
       </Box>
       <Box className="about-body-mid">
         <div className="root">
-          
-          <div style={{ marginTop: '-30px', marginLeft: '-20px' }}>
+          <div style={{ marginTop: "-30px", marginLeft: "-20px" }}>
             <img
               src={PARTY_IMAGE}
               width="400px"
               style={{
                 borderRadius: "5px",
-                boxShadow: '25px 25px 0 0px #ffffff29'
+                boxShadow: "25px 25px 0 0px #ffffff29",
               }}
             />
           </div>
         </div>
-        <div style={{ width: "380px", marginTop: '-80px' }}>
-          <Typography fontSize="36px" fontWeight={700} sx={{marginBottom: '20px'}}>
+        <div style={{ width: "380px", marginTop: "-80px" }}>
+          <Typography
+            fontSize="36px"
+            fontWeight={700}
+            sx={{ marginBottom: "20px" }}
+          >
             Title
           </Typography>
           <Typography fontSize="12px">
@@ -72,8 +82,13 @@ const AboutUs = () => {
         </div>
       </Box>
       <Box className="about-body">
-        <div style={{ width: "380px", marginTop: '-60px' }}>
-          <Typography fontSize="36px" fontWeight={700} color="#023d65" sx={{marginBottom: '20px'}}>
+        <div style={{ width: "380px", marginTop: "-60px" }}>
+          <Typography
+            fontSize="36px"
+            fontWeight={700}
+            color="#023d65"
+            sx={{ marginBottom: "20px" }}
+          >
             Our mission
           </Typography>
           <Typography fontSize="12px" color="#333333">
@@ -99,9 +114,10 @@ const AboutUs = () => {
               }}
             />
           </div>
-          <div className="trapezoid" style={{ height: "100%", width: "360px" }}>
-            {/* <div className="trapezoid"></div> */}
-          </div>
+          <div
+            className="trapezoid"
+            style={{ height: "100%", width: "360px" }}
+          ></div>
         </div>
       </Box>
     </div>

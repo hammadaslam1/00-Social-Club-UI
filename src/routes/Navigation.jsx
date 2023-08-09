@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "../components/navbar/Navbar";
 import {
   ABOUT_US,
+  ACCOUNT_INFO,
   CONTACT_US,
   CREATE_EVENT,
   EDIT_PROFILE,
@@ -27,6 +28,7 @@ import AboutUs from "../screens/AboutUs";
 import Home from "../screens/Home";
 import EventDescription from "../screens/EventDescription";
 import Privacy from "../screens/Privacy";
+import AccountInfo from "../screens/AccountInfo";
 
 const Navigation = () => {
   return (
@@ -45,6 +47,7 @@ const Navigation = () => {
         <Route path={MY_EVENTS} element={<MyEvents />} />
         <Route path={EVENT_DESC} element={<EventDescription />} />
         <Route path={PRIVACY} element={<Privacy />} />
+        <Route path={ACCOUNT_INFO} element={<AccountInfo />} />
       </Routes>
       <Footer />
     </Router>

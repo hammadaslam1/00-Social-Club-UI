@@ -5,7 +5,6 @@ import TuneIcon from "@mui/icons-material/Tune";
 import EVENT_IMAGE from "../assets/images/eventImage01.png";
 import VenueDialog from "../components/dialogs/VenueDialog";
 import { useState } from "react";
-// import LOGO from "../assets/logos/footerLogo01.png";
 
 const Events = () => {
   const [openDialog, setOpenDialog] = useState(false);

@@ -14,6 +14,7 @@ import STORIES_BODY from "../assets/images/storyBody01.png";
 import { RiCalendarTodoFill } from "react-icons/ri";
 import { STORY_DETAIL } from "../routes/Routes";
 import { useNavigate } from "react-router-dom";
+import "./screens.css";
 
 const Stories = () => {
   const navigate = useNavigate();
