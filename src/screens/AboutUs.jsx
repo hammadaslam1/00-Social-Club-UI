@@ -1,11 +1,17 @@
 import { Box, Typography } from "@mui/material";
 import PARTY_IMAGE from "../assets/images/eventImage02.png";
-import "./screens.css";
+import ABOUT_US_IMAGE from "../assets/images/aboutUs02.png";
+// import "./screens.css";
 
 const AboutUs = () => {
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
-      <Box className="about-header">
+      <Box className="about-header" sx={{
+        backgroundImage: `url(${ABOUT_US_IMAGE})`,
+        backgroundPosition: 'center',
+        backgroundSize: 'contain',
+        backgroundRepeat: 'no-repeat',
+      }}>
         <Typography fontSize="36px">About us</Typography>
       </Box>
       <Box className="about-body">

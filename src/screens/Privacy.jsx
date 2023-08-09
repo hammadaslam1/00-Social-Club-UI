@@ -20,8 +20,10 @@ const Privacy = () => {
         <Typography
           variant="h3"
           textAlign="center"
-          fontWeight={600}
+          // fontWeight={600}
+          fontFamily="Krona One"
           letterSpacing={1.5}
+          marginTop='20px'
           marginBottom='40px'
         >
           Privacy Policy

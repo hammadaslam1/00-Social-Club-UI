@@ -1,7 +1,7 @@
 import { Avatar, Box, Card, Checkbox, FormControlLabel, FormLabel, IconButton, Typography } from "@mui/material";
 import SignupInput from "../components/inputs/SignupInput";
 import PrimaryButton from "../components/buttons/PrimaryButton";
-import PROFILE_PIC from "../assets/profile/profilePic01.png";
+import PROFILE_PIC from "../assets/profile/profilePic04.png";
 import "./screens.css";
 import { Edit, KeyboardArrowDown } from "@mui/icons-material";
 import { Option, Select, selectClasses } from "@mui/joy";
@@ -20,7 +20,7 @@ const EditProfile = () => {
         >
           Edit Profile
         </Typography>
-        <div style={{ alignSelf: "center", height: "200px" }}>
+        <div style={{ alignSelf: "center", height: "200px", width: '200px' }}>
           <img
             src={PROFILE_PIC}
             height="200px"
@@ -122,7 +122,10 @@ const EditProfile = () => {
           sx={{
             width: "100%",
             textTransform: "capitalize",
+            marginTop: "20px",
             marginBottom: "20px",
+            fontFamily:"Krona One",
+            fontWeight: 'normal'
           }}
         >
           Save

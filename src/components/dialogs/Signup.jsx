@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Checkbox,
   Dialog,
   DialogActions,
@@ -138,10 +139,10 @@ const Signup = ({ openSignup, setOpenSignup, setOpenLogin }) => {
               <Typography
                 variant="body2"
                 color="#505050"
-                style={{ marginTop: "10px" }}
+                style={{ marginTop: "12px", display: 'flex', alignItems: 'center' }}
               >
                 Already a member?{" "}
-                <button
+                <Button
                   onClick={() => {
                     setOpenSignup(false);
                     setOpenLogin(true);
@@ -149,11 +150,13 @@ const Signup = ({ openSignup, setOpenSignup, setOpenLogin }) => {
                   style={{
                     color: "#023d65",
                     textDecoration: "underline",
-                    fontWeight: "700",
+                    fontSize: '15px',
+                    fontWeight: "bold",
+                    textTransform: 'capitalize',
                   }}
                 >
                   Login
-                </button>
+                </Button>
               </Typography>
             </DialogActions>
           </div>

@@ -8,25 +8,27 @@ import "./screens.css";
 
 const EventDescription = () => {
   return (
-    <Card className="create-main" sx={{ padding: "20px", marginX: "100px" }}>
+    <Card className="create-main" sx={{ padding: "20px",}}>
       <Box>
         <div
           style={{
-            height: "85vh",
+            height: "65vh",
+            // width: '100%',
             backgroundImage: `url(${DESC_IMAGE})`,
             backgroundPosition: "center",
             backgroundSize: "cover",
+            backgroundRepeat: 'no-repeat',
             borderRadius: "10px",
             marginBottom: "20px",
           }}
         ></div>
       </Box>
-      <Typography variant="h4" fontWeight={600} letterSpacing={1.5}>
+      <Typography variant="h4" fontFamily="Krona One">
         Event Description
       </Typography>
       <Typography
         variant="caption"
-        width={750}
+        maxWidth={750}
         color="#707070"
         lineHeight={1.5}
       >
@@ -36,29 +38,29 @@ const EventDescription = () => {
         scrambled it to make a type specimen book. It has survived not only five
         centuries, but also the leap into.
       </Typography>
-      <div style={{ display: "flex", marginTop: "20px" }}>
-        <div style={{ flex: 1, display: "flex", alignItems: "center" }}>
+      <div style={{ display: "flex", flexWrap: 'wrap', marginTop: "20px" }}>
+        <div style={{ display: "flex", alignItems: "center" }}>
           <WatchLater fontSize="medium" />
           <div
             style={{ display: "flex", flexDirection: "column", margin: "10px" }}
           >
-            <Typography variant="caption" fontWeight={600} color="#3d3d3d">
+            <Typography variant="caption" fontFamily="Krona One" color="#3d3d3d">
               Thursday, 23 Feb,2023 at 07:00 pm to
             </Typography>
-            <Typography variant="caption" fontWeight={600} color="#3d3d3d">
+            <Typography variant="caption" fontFamily="Krona One" color="#3d3d3d">
               Thursday, 23 Feb,2023 at 09:00 pm EST
             </Typography>
           </div>
         </div>
-        <div style={{ flex: 1, display: "flex", alignItems: "center" }}>
+        <div style={{ display: "flex", alignItems: "center" }}>
           <LocationOn fontSize="medium" />
           <div
             style={{ display: "flex", flexDirection: "column", margin: "10px" }}
           >
-            <Typography fontSize="16px" fontWeight={600} color="#3d3d3d">
+            <Typography fontSize="16px" fontFamily="Krona One" color="#3d3d3d">
               Ophelia Lounge NYC
             </Typography>
-            <Typography variant="caption" fontWeight={600} color="#3d3d3d">
+            <Typography variant="caption" fontFamily="Krona One" color="#3d3d3d">
               3 Mitchell PI 26th Floor - New Your, NY
             </Typography>
           </div>
@@ -76,13 +78,12 @@ const EventDescription = () => {
         elevation={0}
       >
         <img src={PROFILE_PIC} width="85px" height="85px" />
-        <Typography fontSize="10px" letterSpacing={1.5} color="#6a6a6a">
+        <Typography fontSize="10px" fontFamily="Krona One" color="#6a6a6a">
           Host by
         </Typography>
         <Typography
           fontSize="18px"
-          fontWeight={600}
-          letterSpacing={1.5}
+          fontFamily="Krona One"
           color="#6a6a6a"
         >
           Ms. Janvi
@@ -91,9 +92,9 @@ const EventDescription = () => {
           sx={{
             width: "200px",
             borderRadius: "5px",
-            fontSize: "16px",
-            fontWeight: "500",
-            letterSpacing: 1.2,
+            fontWeight: 'normal',
+            fontSize: '16px',
+            fontFamily:"Krona One",
             marginTop: "10px",
           }}
         >
@@ -102,7 +103,7 @@ const EventDescription = () => {
       </Card>
       <Typography
         variant="caption"
-        width={750}
+        maxWidth={750}
         marginTop="20px"
         lineHeight={1.5}
         color="#707070"
@@ -119,7 +120,7 @@ const EventDescription = () => {
       </Typography>
       <Typography
         variant="caption"
-        width={750}
+        maxWidth={750}
         marginTop="20px"
         lineHeight={1.5}
         color="#707070"
@@ -175,7 +176,7 @@ const EventDescription = () => {
       <Box>
         <div
           style={{
-            height: "60vh",
+            height: "40vh",
             backgroundImage: `url(${MAP_IMAGE})`,
             backgroundPosition: "center",
             backgroundSize: "cover",

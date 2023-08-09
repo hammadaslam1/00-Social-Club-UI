@@ -23,7 +23,14 @@ const Stories = () => {
       <div className="story-head">
         {new Array(2).fill(0).map((i) => (
           <Card
-            sx={{ boxShadow: "0px 3px 30px #0000001F", borderRadius: "20px" }}
+            sx={{
+              boxShadow: "0px 3px 30px #0000001F",
+              borderRadius: "20px",
+              justifySelf: "center",
+              alignSelf: "center",
+              maxWidth: "600px",
+              minWidth: "300px",
+            }}
             elevation={0}
             key={i}
           >
@@ -32,10 +39,10 @@ const Stories = () => {
                 <CardMedia component="img" image={STORIES_HEAD} alt="" />
               </div>
               <CardContent>
-                <Typography variant="h6" sx={{ color: "#023d65" }}>
+                <Typography variant="h6" fontWeight={600} sx={{ color: "#023d65" }}>
                   Stories
                 </Typography>
-                <Typography variant="h6" sx={{ color: "#404040" }}>
+                <Typography variant="h6" fontWeight={600} sx={{ color: "#404040" }}>
                   Lorem Ipsum is simply dummy text of
                 </Typography>
                 <Typography variant="caption" sx={{ color: "#404040" }}>
@@ -58,25 +65,36 @@ const Stories = () => {
             border: "1px solid #707070",
             display: "flex",
             justifyContent: "space-between",
+            flexWrap: "wrap",
             alignItems: "center",
             padding: "20px",
           }}
         >
           <div>
-            <Typography variant="h4" sx={{ color: "#fff" }}>
+            <Typography variant="h4" fontWeight={600} sx={{ color: "#fff" }}>
               Heading
             </Typography>
-            <Typography variant="h6" sx={{ color: "#f5fadf" }}>
+            <Typography variant="h6" fontWeight={600} sx={{ color: "#f5fadf" }}>
               Find an event near you
             </Typography>
           </div>
-          <img src={HEADING_IMAGE} width="120px" />
+          <img
+            src={HEADING_IMAGE}
+            width="120px"
+            style={{ alignSelf: "center" }}
+          />
         </Box>
       </div>
       <div className="story-body">
-        {new Array(12).fill(0).map((i) => (
+        {new Array(8).fill(0).map((i) => (
           <Card
-            sx={{ boxShadow: "0px 3px 30px #0000001F", borderRadius: "20px" }}
+            sx={{
+              boxShadow: "0px 3px 30px #0000001F",
+              borderRadius: "20px",
+              maxWidth: "350px",
+              minWidth: "300px",
+              margin: "20px",
+            }}
             elevation={0}
             key={i}
           >
@@ -85,11 +103,11 @@ const Stories = () => {
                 <CardMedia component="img" image={STORIES_BODY} alt="" />
               </div>
               <CardContent>
-                <Typography variant="body1" sx={{ color: "#404040" }}>
+                <Typography variant="body1" fontWeight={600} sx={{ color: "#404040" }}>
                   Lorem Ipsum is simply dummy text of the printing typesetting
                   industry.
                 </Typography>
-                <Typography variant="caption" color="text.secondary">
+                <Typography variant="caption" color="#404040">
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry's
                   standard dummy text ever since the 1500s, when an unknown
@@ -97,16 +115,27 @@ const Stories = () => {
                 </Typography>
               </CardContent>
             </CardActionArea>
-            <div style={{width: '90%', margin: 'auto', borderBottom: '1px solid #d0d0d0'}}></div>
+            <div
+              style={{
+                width: "90%",
+                margin: "auto",
+                borderBottom: "1px solid #d0d0d0",
+              }}
+            ></div>
             <CardActions
-              sx={{ display: "flex", justifyContent: "space-between", }}
+              sx={{ display: "flex", justifyContent: "space-between" }}
             >
               <Typography sx={{ display: "flex" }} fontSize="12px">
                 <RiCalendarTodoFill fontSize="16px" /> 03 April, 2018
               </Typography>
-              <Button size="small" onClick={()=>{
-                navigate(STORY_DETAIL);
-              }} sx={{textTransform: 'capitalize'}} disableRipple>
+              <Button
+                size="small"
+                onClick={() => {
+                  navigate(STORY_DETAIL);
+                }}
+                sx={{ textTransform: "capitalize" }}
+                disableRipple
+              >
                 Read more
               </Button>
             </CardActions>

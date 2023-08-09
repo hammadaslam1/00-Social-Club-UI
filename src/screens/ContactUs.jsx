@@ -18,7 +18,7 @@ const ContactUs = () => {
         >
           What can we do for you?
         </Typography>
-        <CreateInput
+        <SignupInput
           type="text"
           sx={{
             backgroundColor: "#f8f8f8",

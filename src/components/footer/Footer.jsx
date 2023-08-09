@@ -16,9 +16,15 @@ const Footer = () => {
     >
       <Toolbar sx={{ display: "flex", justifyContent: "space-around" }}>
         <div className="footer-image">
-          <img src={FOOTER_IMAGE} style={{cursor: 'pointer'}} onClick={()=>{
-            navigate(HOME)
-          }} />
+          <img
+            src={FOOTER_IMAGE}
+            width="100px"
+            height="100px"
+            style={{ cursor: "pointer" }}
+            onClick={() => {
+              navigate(HOME);
+            }}
+          />
         </div>
         <div className="footer-div">
           <ButtonGroup
@@ -51,8 +57,31 @@ const Footer = () => {
             </Button>
           </ButtonGroup>
           <Typography variant="subtitle1" fontWeight={500}>
-            By signing up, you agree to <Link to={PRIVACY}>Terms of Service</Link>,{" "}
-            <Link to={PRIVACY}>Privacy Policy</Link>, and <Link to={PRIVACY}>Cookie Policy</Link>,
+            By signing up, you agree to{" "}
+            <a
+              onClick={() => {
+                navigate(PRIVACY);
+              }}
+            >
+              Terms of Service
+            </a>
+            ,{" "}
+            <a
+              onClick={() => {
+                navigate(PRIVACY);
+              }}
+            >
+              Privacy Policy
+            </a>
+            , and{" "}
+            <a
+              onClick={() => {
+                navigate(PRIVACY);
+              }}
+            >
+              Cookie Policy
+            </a>
+            ,
           </Typography>
           <Typography variant="subtitle1" fontWeight={500}>
             Copyright@Lorem Ipsum is simply dummy tex

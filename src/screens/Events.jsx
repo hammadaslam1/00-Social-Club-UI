@@ -63,7 +63,7 @@ const Events = () => {
         </div>
         {new Array(5).fill(0).map((e, i) => (
           <>
-            <Typography variant="h5" sx={{ color: "#515151" }}>
+            <Typography variant="h5" fontWeight={600} sx={{ color: "#515151" }}>
               {dates[i]}
             </Typography>
             <div
@@ -90,7 +90,7 @@ const Events = () => {
                 }}
               >
                 <div style={{ display: "flex", flexDirection: "column" }}>
-                  <Typography variant="body1">Event Heading</Typography>
+                  <Typography variant="body1" fontWeight={600}>Event Heading</Typography>
                   <Typography variant="caption">
                     Lorem Ipsum is simply dummy text of the printing and
                     typesetting industry.

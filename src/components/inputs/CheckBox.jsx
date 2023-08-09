@@ -10,7 +10,7 @@ const CheckBox = ({sx={}, ...props }) => {
   return (
     <FormControl>
       <FormLabel
-        sx={{ color: "#707070", fontSize: "14px", marginBottom: "2px" }}
+        sx={{ color: "#000", fontSize: "16px", fontWeight: '600', marginBottom: "2px" }}
       >
         {props.heading}
       </FormLabel>

@@ -80,6 +80,7 @@ const AccountInfo = () => {
             "&:focus": { border: "1px solid #023D65", outline: "none" },
           }}
         >
+          <Option value=""> --relationship with alcohol-- </Option>
           <Option value="option one">Option One</Option>
           <Option value="option two">Option Two</Option>
           <Option value="option three">Option Three</Option>
@@ -151,6 +152,7 @@ const AccountInfo = () => {
           sx={{
             width: "100%",
             textTransform: "capitalize",
+            marginTop: "20px",
             marginBottom: "20px",
           }}
         >

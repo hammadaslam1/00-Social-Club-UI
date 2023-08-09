@@ -61,13 +61,13 @@ const Navbar = () => {
       sx={{
         backgroundColor: "#023d65",
         width: "100%",
-
+        paddingX: '20px',
         top: "0",
         left: "0",
       }}
     >
-      <Toolbar sx={{ display: "flex", justifyContent: "space-around" }}>
-        <div className="" style={{ display: "flex", alignItems: "center" }}>
+      <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+        <div  style={{ display: "flex", alignItems: "center" }}>
           <img src={scLogo01} width="160px" />
           <Search />
         </div>

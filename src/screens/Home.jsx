@@ -103,15 +103,15 @@ const Home = () => {
             >
               <div style={{ flex: 1, padding: "90px" }}>
                 <Typography
-                  variant="h3"
+                  fontSize='32pt'
                   color="#fff"
-                  sx={{ marginBottom: "20px" }}
+                  sx={{ marginBottom: "20px", fontFamily:"Krona One", }}
                 >
                   Let's Connect with the Alcohol Free World Outside your Door
                 </Typography>
-                <PrimaryButton onClick={()=>{
+                <PrimaryButton  onClick={()=>{
                     navigate(CREATE_EVENT)
-                }} sx={{ marginTop: "30px" }}>
+                }} sx={{ marginTop: "30px", fontFamily:"Krona One", fontWeight: 'normal' }}>
                   Create New Event
                 </PrimaryButton>
               </div>
@@ -137,9 +137,11 @@ const Home = () => {
       <div style={{ backgroundColor: "#fff" }}>
         <Typography
           variant="h4"
-          fontWeight={600}
+          // fontWeight={600}
+          color={'#404040'}
           textAlign={"center"}
           marginTop="20px"
+          fontFamily="Krona One"
         >
           Events and Experiences
         </Typography>
@@ -269,7 +271,7 @@ const Home = () => {
         </Carousel>
       </div>
       <div style={{ marginTop: "40px" }}>
-        <Typography variant="h4" fontWeight={600} textAlign={"center"}>
+        <Typography variant="h4" color={'#404040'} fontFamily="Krona One" textAlign={"center"}>
           Stories
         </Typography>
         <Carousel
@@ -365,7 +367,7 @@ const Home = () => {
                     <CardActions>
                       <div style={{ padding: "10px" }}>
                         <PrimaryButton
-                          sx={{ width: "190px", fontWeight: "500" }}
+                          sx={{ width: "190px", fontWeight: "500", fontFamily:"Krona One", }}
                         >
                           Read More
                         </PrimaryButton>
@@ -390,7 +392,7 @@ const Home = () => {
         }}
       >
         <div style={{padding: '20px'}}>
-          <Typography variant="h3" color="#f3f3f3">
+          <Typography variant="h3" color="#f3f3f3" fontFamily="Krona One">
             Our Mission
           </Typography>
         </div>

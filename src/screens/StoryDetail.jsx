@@ -1,7 +1,7 @@
 import {
   Box,
+  Button,
   Card,
-  CardActionArea,
   CardContent,
   CardMedia,
   Typography,
@@ -27,7 +27,7 @@ const StoryDetail = () => {
             <Typography
               sx={{
                 color: "#000",
-                fontFamily: "Helvetica",
+                
                 fontWeight: "700",
                 fontSize: "19px",
                 width: "600px",
@@ -74,26 +74,31 @@ const StoryDetail = () => {
               survived not only five centuries, but also the leap into
               electronic typesetting, remaining essentially unchang...
             </Typography>
-            <button
+            <Button
               style={{
                 textDecoration: "underline",
                 color: "#393939",
                 fontWeight: "700",
                 fontSize: "12px",
                 display: "flex",
-                width: "100px",
+                width: "fit-content",
                 marginLeft: "15px",
                 marginBottom: "30px",
                 alignItems: "center",
                 justifyContent: "space-between",
+                textTransform: 'capitalize',
+                "&:hover":{
+                  backgroundColor: 'transparent'
+                }
               }}
+              disableRipple
               onClick={() => {
                 setExpanded(!expanded);
               }}
             >
               <span>06 Comments</span>{" "}
               {expanded ? <BsChevronUp /> : <BsChevronDown />}
-            </button>
+            </Button>
           </div>
           {expanded
             ? new Array(4).fill(0).map((i) => (

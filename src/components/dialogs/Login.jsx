@@ -1,36 +1,27 @@
 import { Mail } from "@mui/icons-material";
 import LockIcon from "@mui/icons-material/Lock";
 import CloseIcon from "@mui/icons-material/Close";
-import { Input } from "@mui/joy";
 import GOOGLE_IMAGE from "../../assets/icons/google32.png";
 import FACEBOOK_IMAGE from "../../assets/icons/facebook32.png";
 import APPLE_IMAGE from "../../assets/icons/apple32.png";
 import {
-  Backdrop,
   Box,
   Button,
   Checkbox,
   Dialog,
   DialogActions,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
-  Fade,
   FormControlLabel,
   IconButton,
-  Modal,
   Slide,
   Typography,
 } from "@mui/material";
 import { forwardRef, useState } from "react";
-import { Link } from "react-router-dom";
 import PrimaryButton from "../buttons/PrimaryButton";
 import SocialButton from "../buttons/SocialButton";
 import { useSelector, useDispatch } from "react-redux";
 import { ADD_USER } from "../../redux/Types/Types";
 import "./dialog.css";
 import LoginInput from "../inputs/LoginInput";
-import Signup from "./Signup";
 
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="down" ref={ref} {...props} />;
@@ -182,10 +173,10 @@ const Login = ({ openLogin, setOpenLogin, openSignup, setOpenSignup }) => {
               <Typography
                 variant="body2"
                 color="#505050"
-                style={{ marginTop: "10px" }}
+                style={{ marginTop: "12px", display: 'flex', alignItems: 'center' }}
               >
                 Not a member yet?{" "}
-                <button
+                <Button
                   // to=""
                   onClick={() => {
                     setOpenSignup(true);
@@ -194,11 +185,13 @@ const Login = ({ openLogin, setOpenLogin, openSignup, setOpenSignup }) => {
                   style={{
                     color: "#023d65",
                     textDecoration: "underline",
-                    fontWeight: "700",
+                    fontSize: '15px',
+                    fontWeight: "bold",
+                    textTransform: 'capitalize',
                   }}
                 >
                   Sign up
-                </button>
+                </Button>
               </Typography>
             </DialogActions>
           </div>

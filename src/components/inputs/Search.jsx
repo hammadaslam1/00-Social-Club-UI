@@ -34,10 +34,13 @@ const Search = ({sx={}, ph=''}) => {
       paddingLeft: `calc(1em + ${theme.spacing(4)})`,
       transition: theme.transitions.create("width"),
       width: "100%",
-      [theme.breakpoints.up("sm")]: {
-        width: "30ch",
-      },
+      [theme.breakpoints.up('sm')]: {
+        width: '20ch',
+        '&:focus': {
+          width: '30ch',
+        },
     },
+  }
   }));
   return (
     <SearchBar

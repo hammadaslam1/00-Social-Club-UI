@@ -1,4 +1,4 @@
-import { Box, Dialog, IconButton, Typography } from "@mui/material";
+import { Box, Button, Dialog, IconButton, Typography } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import Search from "../inputs/Search";
 import PrimaryButton from "../buttons/PrimaryButton";
@@ -61,25 +61,24 @@ const VenueDialog = ({ openDialog, setOpenDialog }) => {
             <Typography variant="h5" fontWeight={600} sx={{ color: "#fff" }}>
               Category
             </Typography>
-            <button style={{ textDecoration: "underline" }}>reset</button>
+            <Button style={{ textDecoration: "underline", color: '#fff', textTransform: 'capitalize' }} disableRipple>reset</Button>
           </div>
         </div>
         <div
           style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(10, 1fr)",
+            display: "flex",
+            width: '100%',
             marginTop: "-35px",
+            justifyContent: 'center'
           }}
         >
           <Search
             sx={{
-              gridColumn: "2/10",
               height: "40px",
               backgroundColor: "#fff",
               color: "#555555",
               borderRadius: "5px",
               boxShadow: "0px 3px 6px #00000029",
-              marginLeft: "0",
               "&:hover": {
                 backgroundColor: "#fff",
               },

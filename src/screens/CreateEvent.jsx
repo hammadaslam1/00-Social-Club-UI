@@ -14,11 +14,11 @@ const CreateEvent = () => {
   const navigate = useNavigate();
   const [price, setPrice] = useState(false);
   const user = useSelector((state) => state.UserReducer.user);
-  useEffect(()=>{
+  useEffect(() => {
     if (!user) {
       navigate(HOME);
     }
-  }, user)
+  }, user);
 
   return (
     <Card className="create-main" elevation={false}>
@@ -126,7 +126,12 @@ const CreateEvent = () => {
         </Typography>
         <div className="draganddrop">
           <div className="drop-body">
-            <Button className="drag-btn" sx={{padding: '50px', color: 'gray'}} size="large" disableRipple={true}>
+            <Button
+              className="drag-btn"
+              sx={{ padding: "50px", color: "gray" }}
+              size="large"
+              disableRipple={true}
+            >
               <Upload fontSize="large" />
               <div>
                 <Typography variant="h6">Click to Upload</Typography>
@@ -175,6 +180,7 @@ const CreateEvent = () => {
           Event Paid or Free?
         </Typography>
         <div
+          className="checks"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(2, 1fr)",
@@ -188,25 +194,34 @@ const CreateEvent = () => {
               fontWeight: "600",
               borderRadius: "5px",
               padding: "5px",
-              width: '100%'
+              width: "100%",
             }}
-            onChange={()=>setPrice(!price)}
-            />
+            onChange={() => setPrice(!price)}
+          />
           <CheckBox
             label="The Event is Free"
             sx={{
               fontWeight: "600",
               borderRadius: "5px",
               padding: "5px",
-              width: '100%'
+              width: "100%",
             }}
           />
-          <div style={{height: '10px'}}>
-
-              {price?
-              <Typography sx={{display: 'flex', justifyContent: 'space-between', width: '100%'}}>Ticket Price <span>$100</span></Typography>
-              :''}
-              </div>
+          <div style={{ height: "10px" }}>
+            {price ? (
+              <Typography
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  width: "100%",
+                }}
+              >
+                Ticket Price <span>$100</span>
+              </Typography>
+            ) : (
+              ""
+            )}
+          </div>
         </div>
         <div
           style={{
@@ -215,7 +230,6 @@ const CreateEvent = () => {
             gap: "1px 5px",
             marginBottom: "20px",
             marginTop: "20px",
-
           }}
         >
           <PrimaryButton
