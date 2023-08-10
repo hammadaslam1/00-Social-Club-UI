@@ -1,7 +1,7 @@
 import scLogo01 from "../../assets/logos/scLogo01.png";
-import PROFILE_PIC from '../../assets/profile/profilePic03.png'
+import PROFILE_PIC from "../../assets/profile/profilePic03.png";
 import "./navbar.css";
-import { TbLogin } from "react-icons/tb";
+import { TbLogin, TbLogout } from "react-icons/tb";
 import Search from "../inputs/Search";
 import {
   AppBar,
@@ -13,7 +13,16 @@ import {
   Typography,
 } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
-import { ACCOUNT_INFO, CREATE_EVENT, EDIT_PROFILE, EVENTS, HOME, MY_EVENTS, STORIES, VENUES } from "../../routes/Routes";
+import {
+  ACCOUNT_INFO,
+  CREATE_EVENT,
+  EDIT_PROFILE,
+  EVENTS,
+  HOME,
+  MY_EVENTS,
+  STORIES,
+  VENUES,
+} from "../../routes/Routes";
 import SecondaryButton from "../buttons/SecondaryButton";
 import Login from "../dialogs/Login";
 import { useState } from "react";
@@ -27,7 +36,6 @@ const Navbar = () => {
   const user = useSelector((state) => state.UserReducer.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  console.log(user);
   const links = {
     color: "#fff",
     textDecoration: "none",
@@ -57,71 +65,168 @@ const Navbar = () => {
   };
   return (
     <AppBar
+      className="xs:px-[5px] sm:px-[10px] md:px-[20px] w-full"
       position="sticky"
       sx={{
         backgroundColor: "#023d65",
-        width: "100%",
-        paddingX: '20px',
         top: "0",
         left: "0",
       }}
     >
       <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-        <div  style={{ display: "flex", alignItems: "center" }}>
-          <img src={scLogo01} width="160px" />
-          <Search />
+        <div style={{ display: "flex", alignItems: "center", padding: "7px" }}>
+          <img src={scLogo01} className="w-[120px] sm:w-[160px]" />
+          <div className="max-[500px]:hidden">
+            <Search />
+          </div>
         </div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-around",
-            alignItems: "center",
-            fontFamily: "Helvetica",
-          }}
-        >
-          <Button
-            style={{ padding: "0" }}
-            onClick={() => {
-              setCreate(false);
-            }}
-          >
-            <Link to={VENUES} style={links}>
-              Venues
-            </Link>
-          </Button>
-          <Button
-            style={{ padding: "0" }}
-            onClick={() => {
-              setCreate(false);
-            }}
-          >
-            <Link to={EVENTS} style={links}>
-              Events
-            </Link>
-          </Button>
-          <Button
-            style={{ padding: "0", marginRight: "20px" }}
-            onClick={() => {
-              setCreate(false);
-            }}
-          >
-            <Link to={STORIES} style={links}>
-              Stories
-            </Link>
-          </Button>
+        <div className="flex justify-around items-center font-['Helvetica'] ">
+          <div className=" hidden lg:flex justify-around items-center font-['Helvetica'] ">
+            <Button
+              style={{ padding: "0" }}
+              onClick={() => {
+                setCreate(false);
+              }}
+            >
+              <Link to={VENUES} style={links}>
+                Venues
+              </Link>
+            </Button>
+            <Button
+              style={{ padding: "0" }}
+              onClick={() => {
+                setCreate(false);
+              }}
+            >
+              <Link to={EVENTS} style={links}>
+                Events
+              </Link>
+            </Button>
+            <Button
+              style={{ padding: "0", marginRight: "20px" }}
+              onClick={() => {
+                setCreate(false);
+              }}
+            >
+              <Link to={STORIES} style={links}>
+                Stories
+              </Link>
+            </Button>
+          </div>
           {!user ? (
-            <SecondaryButton children="Login" onClick={handleLogin} />
+            <div className="flex justify-around items-center">
+              <div className=" hidden lg:flex justify-around items-center font-['Helvetica'] ">
+                <SecondaryButton children="Login" onClick={handleLogin} />
+              </div>
+              <div className=" flex lg:hidden justify-around items-center font-['Helvetica'] ">
+                <Button
+                  id="basic-button"
+                  aria-controls={open ? "basic-menu" : undefined}
+                  aria-haspopup="true"
+                  aria-expanded={open ? "true" : undefined}
+                  onClick={handleClick}
+                  disableRipple={true}
+                >
+                  <Avatar sx={{ width: 52, height: 52 }} />
+                </Button>
+                <Menu
+                  id="basic-menu"
+                  anchorEl={anchorEl}
+                  open={open}
+                  onClose={handleClose}
+                  MenuListProps={{
+                    "aria-labelledby": "basic-button",
+                  }}
+                  // sx={{ width: "200px" }}
+                >
+                  <div className="menu-div">
+                    <Button
+                      sx={{
+                        textAlign: "left",
+                        textTransform: "capitalize",
+                        color: "#023d65",
+                        width: "100%",
+                        fontSize: "16px",
+                        fontWeight: "bold",
+                      }}
+                      size="small"
+                      onClick={() => {
+                        setCreate(false);
+                        setAnchorEl(null);
+                        navigate(VENUES);
+                      }}
+                    >
+                      Venues
+                    </Button>
+                    <Button
+                      sx={{
+                        textAlign: "left",
+                        textTransform: "capitalize",
+                        color: "#023d65",
+                        width: "100%",
+                        fontSize: "16px",
+                        fontWeight: "bold",
+                      }}
+                      size="small"
+                      onClick={() => {
+                        setCreate(false);
+                        setAnchorEl(null);
+                        navigate(EVENTS);
+                      }}
+                    >
+                      Events
+                    </Button>
+                    <Button
+                      onClick={() => {
+                        setAnchorEl(null);
+                        navigate(STORIES);
+                        setCreate(false);
+                      }}
+                      sx={{
+                        textTransform: "capitalize",
+                        color: "#023d65",
+                        width: "100%",
+                        fontSize: "16px",
+                        fontWeight: "bold",
+                      }}
+                      size="small"
+                    >
+                      Stories
+                    </Button>
+                    <Button
+                      onClick={() => {
+                        handleLogin();
+                        setAnchorEl(null);
+                      }}
+                      sx={{
+                        textTransform: "capitalize",
+                        color: "#023d65",
+                        width: "100%",
+                        fontSize: "16px",
+                        fontWeight: "bold",
+                      }}
+                      startIcon={<TbLogin />}
+                      size="small"
+                    >
+                      Login
+                    </Button>
+                  </div>
+                </Menu>
+              </div>
+            </div>
           ) : (
             <>
               {!create ? (
-                <SecondaryButton
-                  children="Create Event"
-                  sx={{ marginRight: "25px", width: "160px" }}
-                  onClick={() => {
-                    setCreate(true);
-                    navigate(CREATE_EVENT);
-                  }}
-                />
+                <div className="hidden sm:flex">
+                  <SecondaryButton
+                    children="Create Event"
+                    sx={{ marginRight: "25px", width: "160px" }}
+                    onClick={() => {
+                      setCreate(true);
+                      navigate(CREATE_EVENT);
+                    }}
+                  />
+                </div>
               ) : (
                 ""
               )}
@@ -131,7 +236,6 @@ const Navbar = () => {
                 aria-haspopup="true"
                 aria-expanded={open ? "true" : undefined}
                 onClick={handleClick}
-                endIcon={<KeyboardArrowDownIcon sx={{ color: "#f5fadf" }} />}
                 disableRipple={true}
               >
                 <Avatar src={PROFILE_PIC} sx={{ width: 52, height: 52 }} />
@@ -148,9 +252,12 @@ const Navbar = () => {
               >
                 <div className="menu-div">
                   <div className="menu-avatar">
-                    <Avatar src={PROFILE_PIC} sx={{ marginLeft: "20px", width: 52, height: 52 }}/>
+                    <Avatar
+                      src={PROFILE_PIC}
+                      sx={{ marginLeft: "20px", width: 52, height: 52 }}
+                    />
                     <div className="menu-profile">
-                      <Typography fontSize={14} fontWeight={600}>
+                      <Typography fontSize={15} fontWeight={600} color={'#023d65'}>
                         Ms. Janvi
                       </Typography>
                       <PrimaryButton
@@ -162,7 +269,8 @@ const Navbar = () => {
                           borderRadius: "4px",
                           fontWeight: "500",
                         }}
-                        onClick={()=>{
+                        onClick={() => {
+                          setCreate(false);
                           setAnchorEl(null);
                           navigate(EDIT_PROFILE);
                         }}
@@ -173,39 +281,124 @@ const Navbar = () => {
                   </div>
                   <Button
                     sx={{
-                      textAlign: "left",
                       textTransform: "capitalize",
-                      color: "black",
-                      width: '100%'
+                      color: "#023d65",
+                      width: "100%",
+                      fontSize: "16px",
+                      fontWeight: "bold",
                     }}
                     size="small"
-                    onClick={()=>{
+                    onClick={() => {
+                      setCreate(false);
                       setAnchorEl(null);
-                      navigate(ACCOUNT_INFO)
+                      navigate(ACCOUNT_INFO);
                     }}
                   >
                     Account Information
                   </Button>
                   <Button
                     sx={{
-                      textAlign: "left",
                       textTransform: "capitalize",
-                      color: "black",
-                      width: '100%'
+                      color: "#023d65",
+                      width: "100%",
+                      fontSize: "16px",
+                      fontWeight: "bold",
                     }}
                     size="small"
-                    onClick={()=>{
+                    onClick={() => {
+                      setCreate(false);
                       setAnchorEl(null);
-                      navigate(MY_EVENTS)
+                      navigate(MY_EVENTS);
                     }}
                   >
                     My Event
                   </Button>
+                  {!create ? (
+                    <div className="sm:hidden">
+                      <Button
+                        sx={{
+                          textAlign: "left",
+                          textTransform: "capitalize",
+                          color: "#023d65",
+                          width: "100%",
+                          fontSize: "16px",
+                          fontWeight: "bold",
+                        }}
+                        size="small"
+                        onClick={() => {
+                          setCreate(true);
+                          setAnchorEl(null);
+                          navigate(CREATE_EVENT);
+                        }}
+                      >
+                        Create Event
+                      </Button>
+                    </div>
+                  ) : (
+                    ""
+                  )}
+                  <div className="lg:hidden">
+                    <Button
+                      sx={{
+                        textAlign: "left",
+                        textTransform: "capitalize",
+                        color: "#023d65",
+                        width: "100%",
+                        fontSize: "16px",
+                        fontWeight: "bold",
+                      }}
+                      size="small"
+                      onClick={() => {
+                        setCreate(false);
+                        setAnchorEl(null);
+                        navigate(VENUES);
+                      }}
+                    >
+                      Venues
+                    </Button>
+                    <Button
+                      sx={{
+                        textAlign: "left",
+                        textTransform: "capitalize",
+                        color: "#023d65",
+                        width: "100%",
+                        fontSize: "16px",
+                        fontWeight: "bold",
+                      }}
+                      size="small"
+                      onClick={() => {
+                        setCreate(false);
+                        setAnchorEl(null);
+                        navigate(EVENTS);
+                      }}
+                    >
+                      Events
+                    </Button>
+                    <Button
+                      onClick={() => {
+                        setAnchorEl(null);
+                        navigate(STORIES);
+                        setCreate(false);
+                      }}
+                      sx={{
+                        textTransform: "capitalize",
+                        color: "#023d65",
+                        width: "100%",
+                        fontSize: "16px",
+                        fontWeight: "bold",
+                      }}
+                      size="small"
+                    >
+                      Stories
+                    </Button>
+                  </div>
                   <Button
                     sx={{
                       textTransform: "capitalize",
-                      color: "black",
-                      textAlign: "left",
+                      color: "#023d65",
+                      width: "100%",
+                      fontSize: "16px",
+                      fontWeight: "bold",
                     }}
                     size="small"
                   >
@@ -214,17 +407,19 @@ const Navbar = () => {
                   <Button
                     sx={{
                       textTransform: "capitalize",
-                      color: "black",
-                      textAlign: "left",
+                      color: "#023d65",
+                      width: "100%",
+                      fontSize: "16px",
+                      fontWeight: "bold",
                     }}
                     size="small"
-                    startIcon={<TbLogin />}
+                    startIcon={<TbLogout />}
                     onClick={() => {
                       dispatch({
                         type: ADD_USER,
                         payload: false,
                       });
-                      navigate(HOME)
+                      navigate(HOME);
                     }}
                   >
                     Logout

@@ -1,7 +1,7 @@
-import { InputBase,  alpha, styled } from "@mui/material";
+import { InputBase, alpha, styled } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
-const Search = ({sx={}, ph=''}) => {
+const Search = ({ sx = {}, ph = "" }) => {
   const SearchBar = styled("div")(({ theme }) => ({
     position: "relative",
     borderRadius: theme.shape.borderRadius,
@@ -11,10 +11,14 @@ const Search = ({sx={}, ph=''}) => {
     },
     // marginLeft: 0,
     width: "100%",
-    [theme.breakpoints.up("md")]: {
-      marginLeft: theme.spacing(1),
-      width: "auto",
-    },
+    // [theme.breakpoints.up("sm")]: {
+    //   marginLeft: theme.spacing(0),
+    //   width: "auto",
+    // },
+    // [theme.breakpoints.up("md")]: {
+    //   marginLeft: theme.spacing(1),
+    //   width: "auto",
+    // },
   }));
 
   const SearchIconWrapper = styled("div")(({ theme }) => ({
@@ -34,13 +38,25 @@ const Search = ({sx={}, ph=''}) => {
       paddingLeft: `calc(1em + ${theme.spacing(4)})`,
       transition: theme.transitions.create("width"),
       width: "100%",
-      [theme.breakpoints.up('sm')]: {
-        width: '20ch',
-        '&:focus': {
-          width: '30ch',
+      [theme.breakpoints.up("xs")]: {
+        width: "0ch",
+        "&:focus": {
+          width: "20ch",
         },
+      },
+      [theme.breakpoints.up("sm")]: {
+        width: "0ch",
+        "&:focus": {
+          width: "20ch",
+        },
+      },
+      [theme.breakpoints.up("md")]: {
+        width: "20ch",
+        "&:focus": {
+          width: "30ch",
+        },
+      },
     },
-  }
   }));
   return (
     <SearchBar
@@ -56,7 +72,7 @@ const Search = ({sx={}, ph=''}) => {
         <SearchIcon />
       </SearchIconWrapper>
       <StyledInputBase
-        placeholder={ph?ph:"Search for 'New Events'"}
+        placeholder={ph ? ph : "Search for 'New Events'"}
         inputProps={{ "aria-label": "search" }}
       />
     </SearchBar>
