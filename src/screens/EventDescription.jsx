@@ -8,7 +8,7 @@ import "./screens.css";
 
 const EventDescription = () => {
   return (
-    <Card className="create-main" sx={{ padding: "20px",}}>
+    <Card className="create-main" sx={{ padding: "20px" }}>
       <Box>
         <div
           style={{
@@ -17,7 +17,7 @@ const EventDescription = () => {
             backgroundImage: `url(${DESC_IMAGE})`,
             backgroundPosition: "center",
             backgroundSize: "cover",
-            backgroundRepeat: 'no-repeat',
+            backgroundRepeat: "no-repeat",
             borderRadius: "10px",
             marginBottom: "20px",
           }}
@@ -38,16 +38,24 @@ const EventDescription = () => {
         scrambled it to make a type specimen book. It has survived not only five
         centuries, but also the leap into.
       </Typography>
-      <div style={{ display: "flex", flexWrap: 'wrap', marginTop: "20px" }}>
+      <div style={{ display: "flex", flexWrap: "wrap", marginTop: "20px" }}>
         <div style={{ display: "flex", alignItems: "center" }}>
           <WatchLater fontSize="medium" />
           <div
             style={{ display: "flex", flexDirection: "column", margin: "10px" }}
           >
-            <Typography variant="caption" fontFamily="Krona One" color="#3d3d3d">
+            <Typography
+              variant="caption"
+              fontFamily="Krona One"
+              color="#3d3d3d"
+            >
               Thursday, 23 Feb,2023 at 07:00 pm to
             </Typography>
-            <Typography variant="caption" fontFamily="Krona One" color="#3d3d3d">
+            <Typography
+              variant="caption"
+              fontFamily="Krona One"
+              color="#3d3d3d"
+            >
               Thursday, 23 Feb,2023 at 09:00 pm EST
             </Typography>
           </div>
@@ -60,7 +68,11 @@ const EventDescription = () => {
             <Typography fontSize="16px" fontFamily="Krona One" color="#3d3d3d">
               Ophelia Lounge NYC
             </Typography>
-            <Typography variant="caption" fontFamily="Krona One" color="#3d3d3d">
+            <Typography
+              variant="caption"
+              fontFamily="Krona One"
+              color="#3d3d3d"
+            >
               3 Mitchell PI 26th Floor - New Your, NY
             </Typography>
           </div>
@@ -81,22 +93,22 @@ const EventDescription = () => {
         <Typography fontSize="10px" fontFamily="Krona One" color="#6a6a6a">
           Host by
         </Typography>
-        <Typography
-          fontSize="18px"
-          fontFamily="Krona One"
-          color="#6a6a6a"
-        >
+        <Typography fontSize="18px" fontFamily="Krona One" color="#6a6a6a">
           Ms. Janvi
         </Typography>
         <PrimaryButton
           sx={{
             width: "200px",
             borderRadius: "5px",
-            fontWeight: 'normal',
-            fontSize: '16px',
-            fontFamily:"Krona One",
+            fontWeight: "normal",
+            fontSize: "16px",
+            fontFamily: "Krona One",
             marginTop: "10px",
+            "&:hover": {
+              backgroundColor: "#023d65",
+            },
           }}
+          disableRipple
         >
           RSVP
         </PrimaryButton>
@@ -135,7 +147,7 @@ const EventDescription = () => {
         with desktop publishing software like Aldus PageMaker including versions
         of Lorem Ipsum.
       </Typography>
-      <div style={{marginTop: '20px'}}>
+      <div style={{ marginTop: "20px" }}>
         <PrimaryButton
           sx={{
             backgroundColor: "#CEB089",
@@ -144,8 +156,12 @@ const EventDescription = () => {
             margin: "5px",
             borderRadius: "5px",
             paddingX: "20px",
+            "&:hover": {
+              backgroundColor: "#CEB089",
+            },
           }}
-        >
+          disableRipple
+          >
           Distance
         </PrimaryButton>
         <PrimaryButton
@@ -156,8 +172,12 @@ const EventDescription = () => {
             margin: "5px",
             borderRadius: "5px",
             paddingX: "20px",
+            "&:hover": {
+              backgroundColor: "#CEB089",
+            },
           }}
-        >
+          disableRipple
+          >
           Sport
         </PrimaryButton>
         <PrimaryButton
@@ -168,7 +188,11 @@ const EventDescription = () => {
             margin: "5px",
             borderRadius: "5px",
             paddingX: "20px",
+            "&:hover": {
+              backgroundColor: "#CEB089",
+            },
           }}
+          disableRipple
         >
           Mixed
         </PrimaryButton>
@@ -182,7 +206,7 @@ const EventDescription = () => {
             backgroundSize: "cover",
             borderRadius: "10px",
             marginBottom: "20px",
-            marginTop: '40px'
+            marginTop: "40px",
           }}
         ></div>
       </Box>

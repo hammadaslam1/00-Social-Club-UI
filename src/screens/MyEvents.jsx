@@ -1,5 +1,5 @@
 import { Box, Card, Divider, Tab, Tabs, Typography } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import HOST_IMAGE from "../assets/images/hostImage01.png";
 import EVENT_IMAGE from "../assets/images/eventImage01.png";
@@ -7,7 +7,9 @@ import PROFILE_PIC from "../assets/profile/profilePic03.png";
 import { LocationOn } from "@mui/icons-material";
 import { IoPeople } from "react-icons/io5";
 import "./screens.css";
-
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import {HOME} from '../routes/Routes'
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -42,6 +44,13 @@ function a11yProps(index) {
 }
 
 const MyEvents = () => {
+  const user = useSelector(state=>state.UserReducer.user)
+  const navigate = useNavigate()
+  useEffect(() => {
+    if (!user) {
+      navigate(HOME);
+    }
+  }, user);
   const [value, setValue] = useState(0);
 
   const dates = ["Friday, March 10", "Saturday, March 11"];

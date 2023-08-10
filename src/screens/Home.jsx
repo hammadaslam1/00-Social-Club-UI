@@ -26,9 +26,11 @@ import {
 import { CREATE_EVENT, EVENT_DESC } from "../routes/Routes";
 import { useNavigate } from "react-router-dom";
 import "./screens.css";
+import { useSelector } from "react-redux";
 
 const Home = () => {
-    const navigate = useNavigate()
+  const user = useSelector((state) => state.UserReducer.user);
+  const navigate = useNavigate();
   const slides = [SLIDE_IMAGE_1, SLIDE_IMAGE_2, SLIDE_IMAGE_3, SLIDE_IMAGE_4];
   const events = [EVENT_IMAGE, SLIDE_IMAGE_2];
   return (
@@ -103,15 +105,23 @@ const Home = () => {
             >
               <div style={{ flex: 1, padding: "90px" }}>
                 <Typography
-                  fontSize='32pt'
+                  fontSize="32pt"
                   color="#fff"
-                  sx={{ marginBottom: "20px", fontFamily:"Krona One", }}
+                  sx={{ marginBottom: "20px", fontFamily: "Krona One" }}
                 >
                   Let's Connect with the Alcohol Free World Outside your Door
                 </Typography>
-                <PrimaryButton  onClick={()=>{
-                    navigate(CREATE_EVENT)
-                }} sx={{ marginTop: "30px", fontFamily:"Krona One", fontWeight: 'normal' }}>
+                <PrimaryButton
+                  disabled={user ? false : true}
+                  onClick={() => {
+                    navigate(CREATE_EVENT);
+                  }}
+                  sx={{
+                    marginTop: "30px",
+                    fontFamily: "Krona One",
+                    fontWeight: "normal",
+                  }}
+                >
                   Create New Event
                 </PrimaryButton>
               </div>
@@ -138,7 +148,7 @@ const Home = () => {
         <Typography
           variant="h4"
           // fontWeight={600}
-          color={'#404040'}
+          color={"#404040"}
           textAlign={"center"}
           marginTop="20px"
           fontFamily="Krona One"
@@ -209,8 +219,8 @@ const Home = () => {
                     boxShadow: "0px 3px 30px #0000001F",
                     borderRadius: "20px",
                   }}
-                  onClick={()=>{
-                    navigate(EVENT_DESC)
+                  onClick={() => {
+                    navigate(EVENT_DESC);
                   }}
                   elevation={0}
                   key={i}
@@ -271,7 +281,12 @@ const Home = () => {
         </Carousel>
       </div>
       <div style={{ marginTop: "40px" }}>
-        <Typography variant="h4" color={'#404040'} fontFamily="Krona One" textAlign={"center"}>
+        <Typography
+          variant="h4"
+          color={"#404040"}
+          fontFamily="Krona One"
+          textAlign={"center"}
+        >
           Stories
         </Typography>
         <Carousel
@@ -367,7 +382,11 @@ const Home = () => {
                     <CardActions>
                       <div style={{ padding: "10px" }}>
                         <PrimaryButton
-                          sx={{ width: "190px", fontWeight: "500", fontFamily:"Krona One", }}
+                          sx={{
+                            width: "190px",
+                            fontWeight: "500",
+                            fontFamily: "Krona One",
+                          }}
                         >
                           Read More
                         </PrimaryButton>
@@ -391,7 +410,7 @@ const Home = () => {
           textAlign: "center",
         }}
       >
-        <div style={{padding: '20px'}}>
+        <div style={{ padding: "20px" }}>
           <Typography variant="h3" color="#f3f3f3" fontFamily="Krona One">
             Our Mission
           </Typography>
@@ -431,12 +450,18 @@ const Home = () => {
           navButtonsAlwaysInvisible
         >
           {new Array(3).fill(0).map((data, i) => (
-            <div style={{ padding: "10px 100px", margin: '20px', color: '#f3f3f3', zIndex: 2 }}>
+            <div
+              style={{
+                padding: "10px 100px",
+                margin: "20px",
+                color: "#f3f3f3",
+                zIndex: 2,
+              }}
+            >
               <Typography>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, 
-                when an unknown printer took a galley
+                text ever since the 1500s, when an unknown printer took a galley
                 of type and scrambled it to make a type specimen book. It has
                 survived not only five centuries, but also the leap into
                 electronic
@@ -444,8 +469,7 @@ const Home = () => {
               <Typography>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, 
-                when an unknown printer took a galley
+                text ever since the 1500s, when an unknown printer took a galley
                 of type and scrambled it to make a type specimen book. It has
                 survived not only five centuries, but also the leap into
                 electronic
