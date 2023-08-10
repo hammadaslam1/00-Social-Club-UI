@@ -13,7 +13,7 @@ import {
   Typography,
 } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
-import { ACCOUNT_INFO, CREATE_EVENT, EDIT_PROFILE, EVENTS, MY_EVENTS, STORIES, VENUES } from "../../routes/Routes";
+import { ACCOUNT_INFO, CREATE_EVENT, EDIT_PROFILE, EVENTS, HOME, MY_EVENTS, STORIES, VENUES } from "../../routes/Routes";
 import SecondaryButton from "../buttons/SecondaryButton";
 import Login from "../dialogs/Login";
 import { useState } from "react";
@@ -224,6 +224,7 @@ const Navbar = () => {
                         type: ADD_USER,
                         payload: false,
                       });
+                      navigate(HOME)
                     }}
                   >
                     Logout

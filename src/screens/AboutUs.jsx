@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import PARTY_IMAGE from "../assets/images/eventImage02.png";
 import ABOUT_US_IMAGE from "../assets/images/aboutUs02.png";
-// import "./screens.css";
+import "./screens.css";
 
 const AboutUs = () => {
   return (
@@ -9,7 +9,7 @@ const AboutUs = () => {
       <Box className="about-header" sx={{
         backgroundImage: `url(${ABOUT_US_IMAGE})`,
         backgroundPosition: 'center',
-        backgroundSize: 'contain',
+        backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
       }}>
         <Typography fontSize="36px">About us</Typography>
@@ -28,7 +28,7 @@ const AboutUs = () => {
           </div>
           <div
             className="trapezoid"
-            style={{ height: "100%", width: "360px" }}
+            style={{ height: "165px", width: "360px" }}
           ></div>
         </div>
         <div style={{ width: "380px", marginTop: "-60px" }}>
@@ -122,7 +122,7 @@ const AboutUs = () => {
           </div>
           <div
             className="trapezoid"
-            style={{ height: "100%", width: "360px" }}
+            style={{ height: "165px", width: "360px" }}
           ></div>
         </div>
       </Box>

@@ -11,6 +11,13 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {HOME} from '../routes/Routes'
 function CustomTabPanel(props) {
+  const user = useSelector(state=>state.UserReducer.user)
+  const navigate = useNavigate()
+  useEffect(() => {
+    if (!user) {
+      navigate(HOME);
+    }
+  }, user);
   const { children, value, index, ...other } = props;
 
   return (

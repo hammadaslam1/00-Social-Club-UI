@@ -86,7 +86,7 @@ label {
 }
 
 .about-header {
-  height: 67.1vh;
+  height: 67vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -96,7 +96,7 @@ label {
   
 }
 .about-body {
-  height: 67.1vh;
+  height: 67vh;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -104,7 +104,7 @@ label {
   padding: 100px 80px 40px 80px;
 }
 .about-body-mid {
-  height: 67.1vh;
+  height: 67vh;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -114,11 +114,12 @@ label {
 }
 .root {
   position: relative;
-  display: inline-block;
-  background: #023d65;
+  align-items: center;
+  /* display: inline-block; */
+  /* background: #023d65; */
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  height: 100%;
+  /* height: 100%; */
 }
 .trapezoid {
   position: relative;
@@ -126,7 +127,8 @@ label {
   align-items: center;
   justify-content: center;
   color: white;
-  /* background: #023d65; */
+  background-color: #023d65;
+  z-index: -1;
 }
 .trapezoid:before {
   content: " ";
