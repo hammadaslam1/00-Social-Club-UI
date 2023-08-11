@@ -199,7 +199,7 @@ const EventDescription = () => {
       <Box>
         <div
           style={{
-            height: "40vh",
+            height: "55vh",
             backgroundImage: `url(${MAP_IMAGE})`,
             backgroundPosition: "center",
             backgroundSize: "cover",

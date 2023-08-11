@@ -86,7 +86,7 @@ const Navbar = () => {
     >
       <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
         <div style={{ display: "flex", alignItems: "center", padding: "7px" }}>
-          <img src={scLogo01} className="w-[120px] sm:w-[150px]" />
+          <img src={scLogo01} onClick={()=>navigate(HOME)} className="w-[120px] sm:w-[150px] cursor-pointer" />
           <div className="hidden md:flex">
             <Search sx={{ marginLeft: 2, width: '30ch' }} />
           </div>

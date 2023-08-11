@@ -4,12 +4,7 @@
 
 @import "tailwindcss/utilities";
 
-*{
-  -ms-overflow-style: none;
-}
-::-webkit-scrollbar {
-  display: none;
-}
+
 body {
   background-color: #F6F5F7;
   margin: 0;

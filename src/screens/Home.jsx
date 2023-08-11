@@ -84,11 +84,12 @@ const Home = () => {
       >
         {slides?.map((data, i) => (
           <Box
+            className="h-[50vh] md:h-[75vh] lg:h-[100vh]"
             key={i}
             sx={{
               display: "flex",
               flexDirection: "column",
-              height: "100vh",
+              // height: "100vh",
               backgroundImage: `url(${data})`,
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
@@ -96,13 +97,17 @@ const Home = () => {
             }}
           >
             <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                height: "95vh",
-              }}
+              className="flex items-center h-[95%]"
+              // style={{
+              //   display: "flex",
+              //   alignItems: "center",
+              //   height: "95vh",
+              // }}
             >
-              <div style={{ flex: 1, padding: "90px" }}>
+              <div
+                className=" flex-1 p-[20px] md:p-[55px] lg:p-[90px] text-lg md:text-2xl lg:text-4xl"
+                // style={{ flex: 1, padding: "90px" }}
+              >
                 <Typography
                   fontSize="32pt"
                   color="#fff"
@@ -111,11 +116,13 @@ const Home = () => {
                   Let's Connect with the Alcohol Free World Outside your Door
                 </Typography>
                 <PrimaryButton
+                className='mt-[30px]'
                   disabled={user ? false : true}
                   onClick={() => {
                     navigate(CREATE_EVENT);
                   }}
                   sx={{
+                    // width: 'fit-content',
                     marginTop: "30px",
                     fontFamily: "Krona One",
                     fontWeight: "normal",
@@ -132,7 +139,7 @@ const Home = () => {
                   justifyContent: "center",
                 }}
               >
-                <img src={SLIDE_LOGO} width="200px" />
+                <img src={SLIDE_LOGO} className="w-[100px] md:w-[150px] lg:w-[200px]" />
               </div>
             </div>
             <img
