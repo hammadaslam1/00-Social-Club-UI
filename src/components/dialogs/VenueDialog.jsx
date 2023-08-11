@@ -48,6 +48,7 @@ const VenueDialog = ({ openDialog, setOpenDialog }) => {
             alignItems: "center",
             padding: "20px",
             color: "#fff",
+            boxShadow: '0px 3px 6px #00000029'
           }}
         >
           <div
@@ -68,7 +69,7 @@ const VenueDialog = ({ openDialog, setOpenDialog }) => {
           style={{
             display: "flex",
             width: '100%',
-            marginTop: "-35px",
+            marginTop: "-30px",
             justifyContent: 'center'
           }}
         >
@@ -79,6 +80,7 @@ const VenueDialog = ({ openDialog, setOpenDialog }) => {
               color: "#555555",
               borderRadius: "5px",
               boxShadow: "0px 3px 6px #00000029",
+              width: '40ch'
             }}
             ph="Madrid, Paris, London"
           />
