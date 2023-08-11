@@ -11,15 +11,12 @@ const VenueDialog = ({ openDialog, setOpenDialog }) => {
   return (
     <Dialog
       open={openDialog}
-      //   TransitionComponent={Transition}
       keepMounted
       onClose={handleClose}
       scroll="paper"
       PaperProps={{
         sx: {
           borderRadius: "10px",
-          //   display: "flex",
-          //   flexDirection: "column",
           height: "560px",
           maxWidth: "500px",
           overflowX: "hidden",
@@ -32,7 +29,7 @@ const VenueDialog = ({ openDialog, setOpenDialog }) => {
           top: "0",
           display: "flex",
           flexDirection: "column",
-          zIndex: '1'
+          zIndex: "1",
         }}
       >
         <div
@@ -48,7 +45,7 @@ const VenueDialog = ({ openDialog, setOpenDialog }) => {
             alignItems: "center",
             padding: "20px",
             color: "#fff",
-            boxShadow: '0px 3px 6px #00000029'
+            boxShadow: "0px 3px 6px #00000029",
           }}
         >
           <div
@@ -62,15 +59,24 @@ const VenueDialog = ({ openDialog, setOpenDialog }) => {
             <Typography variant="h5" fontWeight={600} sx={{ color: "#fff" }}>
               Category
             </Typography>
-            <Button style={{ textDecoration: "underline", color: '#fff', textTransform: 'capitalize' }} disableRipple>reset</Button>
+            <Button
+              style={{
+                textDecoration: "underline",
+                color: "#fff",
+                textTransform: "capitalize",
+              }}
+              disableRipple
+            >
+              reset
+            </Button>
           </div>
         </div>
         <div
           style={{
             display: "flex",
-            width: '100%',
+            width: "100%",
             marginTop: "-30px",
-            justifyContent: 'center'
+            justifyContent: "center",
           }}
         >
           <Search
@@ -80,7 +86,7 @@ const VenueDialog = ({ openDialog, setOpenDialog }) => {
               color: "#555555",
               borderRadius: "5px",
               boxShadow: "0px 3px 6px #00000029",
-              width: '40ch'
+              width: "40ch",
             }}
             ph="Madrid, Paris, London"
           />
@@ -97,31 +103,31 @@ const VenueDialog = ({ openDialog, setOpenDialog }) => {
           <CloseIcon sx={{ textAlign: "right", color: "#fff" }} />
         </IconButton>
       </div>
-      <Box sx={{ padding: '20px 40px 0px 40px' }}>
+      <Box sx={{ padding: "20px 40px 0px 40px" }}>
         <Typography variant="h6" fontWeight={600}>
           Distance
         </Typography>
-        <div style={{display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)'}}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }}>
           <FilterButton>2 miles</FilterButton>
           <FilterButton>5 miles</FilterButton>
           <FilterButton>10 miles</FilterButton>
           <FilterButton>Anywhere</FilterButton>
         </div>
       </Box>
-      <Box sx={{ padding: '20px 40px 0px 40px' }}>
+      <Box sx={{ padding: "20px 40px 0px 40px" }}>
         <Typography variant="h6" fontWeight={600}>
           Alcohol Type
         </Typography>
-        <div style={{display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)'}}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)" }}>
           <FilterButton>Alcohol Free</FilterButton>
           <FilterButton>Mixed Company</FilterButton>
         </div>
       </Box>
-      <Box sx={{ padding: '20px 40px 0px 40px' }}>
+      <Box sx={{ padding: "20px 40px 0px 40px" }}>
         <Typography variant="h6" fontWeight={600}>
           Vibe (type)
         </Typography>
-        <div style={{display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)'}}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }}>
           <FilterButton>Activity</FilterButton>
           <FilterButton>Social</FilterButton>
           <FilterButton>Dance</FilterButton>
@@ -131,11 +137,11 @@ const VenueDialog = ({ openDialog, setOpenDialog }) => {
           <FilterButton>Educational</FilterButton>
         </div>
       </Box>
-      <Box sx={{ padding: '20px 40px 0px 40px' }}>
+      <Box sx={{ padding: "20px 40px 0px 40px" }}>
         <Typography variant="h6" fontWeight={600}>
           Event Size
         </Typography>
-        <div style={{display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)'}}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }}>
           <FilterButton>1-10</FilterButton>
           <FilterButton>10-25</FilterButton>
           <FilterButton>25-50</FilterButton>

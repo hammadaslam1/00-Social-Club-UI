@@ -69,15 +69,7 @@ body {
   margin-bottom: 30px;
   line-height: 0px;
 }
-.story-body {
-  display: flex;
-  justify-content: space-evenly;
-  /* grid-template-columns: repeat(4, 2fr); */
-  /* gap: 20px; */
-  flex-wrap: wrap;
-  letter-spacing: 0px;
-  line-height: 0px;
-}
+
 
 .details-box {
   display: flex;

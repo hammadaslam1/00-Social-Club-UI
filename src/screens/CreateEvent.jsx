@@ -8,7 +8,6 @@ import { useSelector } from "react-redux";
 import { HOME } from "../routes/Routes";
 import { useEffect, useState } from "react";
 import CheckBox from "../components/inputs/CheckBox";
-import "./screens.css";
 
 const CreateEvent = () => {
   const navigate = useNavigate();

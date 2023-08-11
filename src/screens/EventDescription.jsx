@@ -4,7 +4,6 @@ import PROFILE_PIC from "../assets/profile/profilePic04.png";
 import MAP_IMAGE from "../assets/event/map02.png";
 import { LocationOn, WatchLater } from "@mui/icons-material";
 import PrimaryButton from "../components/buttons/PrimaryButton";
-import "./screens.css";
 
 const EventDescription = () => {
   return (

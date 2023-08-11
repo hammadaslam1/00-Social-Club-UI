@@ -2,7 +2,6 @@ import { Box, Card, Typography } from "@mui/material";
 import PrimaryButton from "../components/buttons/PrimaryButton";
 import SignupInput from "../components/inputs/SignupInput";
 import CreateInput from "../components/inputs/CreateInput";
-import "./screens.css";
 
 const ContactUs = () => {
   return (

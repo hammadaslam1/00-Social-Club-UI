@@ -1,5 +1,4 @@
 import { Box, Card, IconButton, Switch, Typography } from "@mui/material";
-import "./screens.css";
 import Search from "../components/inputs/Search";
 import TuneIcon from "@mui/icons-material/Tune";
 import VENUE_IMAGE from "../assets/images/eventImage01.png";

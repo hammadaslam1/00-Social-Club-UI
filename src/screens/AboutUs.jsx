@@ -1,7 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import PARTY_IMAGE from "../assets/images/eventImage02.png";
 import ABOUT_US_IMAGE from "../assets/images/aboutUs02.png";
-import "./screens.css";
 
 const AboutUs = () => {
   return (

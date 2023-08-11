@@ -11,7 +11,6 @@ import {
 import SignupInput from "../components/inputs/SignupInput";
 import PrimaryButton from "../components/buttons/PrimaryButton";
 import PROFILE_PIC from "../assets/profile/profilePic04.png";
-import "./screens.css";
 import { Edit, KeyboardArrowDown } from "@mui/icons-material";
 import { Option, Select, selectClasses } from "@mui/joy";
 import { useSelector } from "react-redux";

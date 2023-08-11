@@ -14,13 +14,15 @@ import STORIES_BODY from "../assets/images/storyBody01.png";
 import { RiCalendarTodoFill } from "react-icons/ri";
 import { STORY_DETAIL } from "../routes/Routes";
 import { useNavigate } from "react-router-dom";
-import "./screens.css";
+import { useState } from "react";
+import PrimaryButton from "../components/buttons/PrimaryButton";
 
 const Stories = () => {
   const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
   return (
     <Box sx={{ margin: "50px 80px" }}>
-      <div className="story-head">
+      <div className="grid gap-10 auto-cols-fr grid-cols-1 lg:grid-cols-2 mb-10">
         {new Array(2).fill(0).map((i) => (
           <Card
             sx={{
@@ -28,8 +30,6 @@ const Stories = () => {
               borderRadius: "20px",
               justifySelf: "center",
               alignSelf: "center",
-              maxWidth: "600px",
-              minWidth: "300px",
             }}
             elevation={0}
             key={i}
@@ -39,10 +39,18 @@ const Stories = () => {
                 <CardMedia component="img" image={STORIES_HEAD} alt="" />
               </div>
               <CardContent>
-                <Typography variant="h6" fontWeight={600} sx={{ color: "#023d65" }}>
+                <Typography
+                  variant="h6"
+                  fontWeight={600}
+                  sx={{ color: "#023d65" }}
+                >
                   Stories
                 </Typography>
-                <Typography variant="h6" fontWeight={600} sx={{ color: "#404040" }}>
+                <Typography
+                  variant="h6"
+                  fontWeight={600}
+                  sx={{ color: "#404040" }}
+                >
                   Lorem Ipsum is simply dummy text of
                 </Typography>
                 <Typography variant="caption" sx={{ color: "#404040" }}>
@@ -85,15 +93,14 @@ const Stories = () => {
           />
         </Box>
       </div>
-      <div className="story-body">
+      <div className="grid gap-3 auto-cols-fr grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
         {new Array(8).fill(0).map((i) => (
           <Card
             sx={{
               boxShadow: "0px 3px 30px #0000001F",
               borderRadius: "20px",
-              maxWidth: "350px",
-              minWidth: "300px",
-              margin: "20px",
+              // maxWidth: "350px",
+              // margin: "20px",
             }}
             elevation={0}
             key={i}
@@ -103,7 +110,11 @@ const Stories = () => {
                 <CardMedia component="img" image={STORIES_BODY} alt="" />
               </div>
               <CardContent>
-                <Typography variant="body1" fontWeight={600} sx={{ color: "#404040" }}>
+                <Typography
+                  variant="body1"
+                  fontWeight={600}
+                  sx={{ color: "#404040" }}
+                >
                   Lorem Ipsum is simply dummy text of the printing typesetting
                   industry.
                 </Typography>
@@ -141,6 +152,16 @@ const Stories = () => {
             </CardActions>
           </Card>
         ))}
+      </div>
+      <div className="mx-auto my-5 w-full flex justify-center">
+      <PrimaryButton
+        sx={{ width: "100px", borderRadius: '5px'}}
+        onClick={() => {
+          setOpen(!open);
+        }}
+      >
+        {!open ? "Show More" : "Show Less"}
+      </PrimaryButton>
       </div>
     </Box>
   );

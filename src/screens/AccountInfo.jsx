@@ -11,7 +11,6 @@ import {
 import SignupInput from "../components/inputs/SignupInput";
 import PrimaryButton from "../components/buttons/PrimaryButton";
 import { Option, Select } from "@mui/joy";
-import "./screens.css";
 import { useSelector } from "react-redux";
 import { HOME } from "../routes/Routes";
 import { useNavigate } from "react-router-dom";

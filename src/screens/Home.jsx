@@ -25,7 +25,6 @@ import {
 } from "@mui/icons-material";
 import { CREATE_EVENT, EVENT_DESC } from "../routes/Routes";
 import { useNavigate } from "react-router-dom";
-import "./screens.css";
 import { useSelector } from "react-redux";
 
 const Home = () => {

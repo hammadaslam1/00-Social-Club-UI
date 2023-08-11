@@ -12,7 +12,6 @@ import PrimaryButton from "../components/buttons/PrimaryButton";
 import LoginInput from "../components/inputs/LoginInput";
 import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 import { useState } from "react";
-import "./screens.css";
 
 const StoryDetail = () => {
   const [expanded, setExpanded] = useState(false);

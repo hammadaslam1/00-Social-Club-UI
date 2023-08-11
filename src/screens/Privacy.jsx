@@ -1,6 +1,5 @@
 import { Box, Card, Typography } from "@mui/material";
 import BACK_IMAGE from "../assets/backgroundImage/scBack02.png";
-import './screens.css'
 
 const Privacy = () => {
   return (
