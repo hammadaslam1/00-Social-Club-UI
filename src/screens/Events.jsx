@@ -31,17 +31,12 @@ const Events = () => {
             ph='Search for "keywords"'
             sx={{
               gridColumn: "1/10",
-              height: "90%",
               backgroundColor: "#f8f8f8",
-              borderRadius: "5px",
               border: "1px solid #E1E1E1",
               color: "#808080",
-              "&:hover": {
-                backgroundColor: "#f8f8f8",
-                borderRadius: "5px",
-                border: "1px solid #E1E1E1",
-              },
+              width: '100%'
             }}
+            fontSize={22}
           />
           <IconButton
             size="large"
@@ -90,7 +85,9 @@ const Events = () => {
                 }}
               >
                 <div style={{ display: "flex", flexDirection: "column" }}>
-                  <Typography variant="body1" fontWeight={600}>Event Heading</Typography>
+                  <Typography variant="body1" fontWeight={600}>
+                    Event Heading
+                  </Typography>
                   <Typography variant="caption">
                     Lorem Ipsum is simply dummy text of the printing and
                     typesetting industry.

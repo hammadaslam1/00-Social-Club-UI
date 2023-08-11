@@ -1,28 +1,25 @@
 import { InputBase, alpha, styled } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
+import { FiSearch } from "react-icons/fi";
 
-const Search = ({ sx = {}, ph = "" }) => {
+const Search = ({ sx = {}, ph = "", ...props }) => {
   const SearchBar = styled("div")(({ theme }) => ({
     position: "relative",
     borderRadius: theme.shape.borderRadius,
     backgroundColor: alpha(theme.palette.common.white, 0.15),
-    "&:hover": {
-      backgroundColor: alpha(theme.palette.common.white, 0.25),
-    },
-    // marginLeft: 0,
-    width: "100%",
+    
+    // width: "100%",
     // [theme.breakpoints.up("sm")]: {
     //   marginLeft: theme.spacing(0),
     //   width: "auto",
     // },
     // [theme.breakpoints.up("md")]: {
-    //   marginLeft: theme.spacing(1),
+    //   marginLeft: theme.spacing(0),
     //   width: "auto",
     // },
   }));
 
   const SearchIconWrapper = styled("div")(({ theme }) => ({
-    padding: theme.spacing(0, 2),
+    padding: theme.spacing(0, 1.5),
     height: "100%",
     position: "absolute",
     pointerEvents: "none",
@@ -34,44 +31,36 @@ const Search = ({ sx = {}, ph = "" }) => {
   const StyledInputBase = styled(InputBase)(({ theme }) => ({
     color: "inherit",
     "& .MuiInputBase-input": {
-      padding: theme.spacing(1, 1, 1, 0),
-      paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+      padding: theme.spacing(1.5, 1, 1.5, 1),
+      paddingLeft: `calc(1em + ${theme.spacing(3)})`,
       transition: theme.transitions.create("width"),
       width: "100%",
-      [theme.breakpoints.up("xs")]: {
-        width: "0ch",
-        "&:focus": {
-          width: "20ch",
-        },
-      },
-      [theme.breakpoints.up("sm")]: {
-        width: "0ch",
-        "&:focus": {
-          width: "20ch",
-        },
-      },
-      [theme.breakpoints.up("md")]: {
-        width: "20ch",
-        "&:focus": {
-          width: "30ch",
-        },
-      },
+      height: '100%',
+      
+      // [theme.breakpoints.up("md")]: {
+      //   width: "30ch",
+      //   "&:focus": {
+      //     width: "30ch",
+      //   },
+      // },
     },
   }));
   return (
     <SearchBar
       sx={{
-        height: "50%",
+        // height: "50%",
         backgroundColor: "#00000039",
         color: "white",
-        borderRadius: "8px",
+        borderRadius: "5px",
+        alignItems: "center",
         ...sx,
       }}
     >
       <SearchIconWrapper>
-        <SearchIcon />
+        <FiSearch fontSize={props.fontSize} />
       </SearchIconWrapper>
       <StyledInputBase
+        sx={{ fontSize: "13px", width: '100%', }}
         placeholder={ph ? ph : "Search for 'New Events'"}
         inputProps={{ "aria-label": "search" }}
       />

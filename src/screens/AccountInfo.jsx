@@ -17,6 +17,13 @@ import { HOME } from "../routes/Routes";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
+const inputStyles = {
+  backgroundColor: "#f8f8f8",
+  borderRadius: "8px",
+  border: "1px solid transparent",
+  "&:focus": { border: "1px solid #023D65", outline: "none" },
+}
+
 const AccountInfo = () => {
   const user = useSelector(state=>state.UserReducer.user)
   const navigate = useNavigate()
@@ -41,23 +48,13 @@ const AccountInfo = () => {
 
         <SignupInput
           type="text"
-          sx={{
-            backgroundColor: "#f8f8f8",
-            borderRadius: "8px",
-            border: "1px solid transparent",
-            "&:focus": { border: "1px solid #023D65", outline: "none" },
-          }}
+          sx={inputStyles}
           placeholder="Enter your first name"
           label="First Name"
         />
         <SignupInput
           type="text"
-          sx={{
-            backgroundColor: "#f8f8f8",
-            borderRadius: "8px",
-            border: "1px solid transparent",
-            "&:focus": { border: "1px solid #023D65", outline: "none" },
-          }}
+          sx={inputStyles}
           placeholder="Enter your last name"
           label="Last Name"
         />
@@ -68,8 +65,7 @@ const AccountInfo = () => {
             backgroundColor: "#f8f8f8",
             borderRadius: "8px",
             border: "1px solid transparent",
-            marginTop: "0px",
-
+            // marginTop: "0px",
             "&:focus": { border: "1px solid #023D65", outline: "none" },
           }}
           placeholder="Enter zip code"
@@ -87,7 +83,6 @@ const AccountInfo = () => {
             borderRadius: "8px",
             border: "1px solid transparent",
             marginTop: "0px",
-            // marginBottom: "30px",
             "&:focus": { border: "1px solid #023D65", outline: "none" },
           }}
         >

@@ -79,9 +79,6 @@ const VenueDialog = ({ openDialog, setOpenDialog }) => {
               color: "#555555",
               borderRadius: "5px",
               boxShadow: "0px 3px 6px #00000029",
-              "&:hover": {
-                backgroundColor: "#fff",
-              },
             }}
             ph="Madrid, Paris, London"
           />

@@ -29,6 +29,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Signup from "../dialogs/Signup";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import PrimaryButton from "../buttons/PrimaryButton";
 import { ADD_USER } from "../../redux/Types/Types";
 
@@ -39,11 +40,21 @@ const Navbar = () => {
   const links = {
     color: "#fff",
     textDecoration: "none",
+    textTransform: "capitalize",
     padding: "23px",
     fontWeight: "700",
     "&:hover": {
       backgroundColor: "#fff2",
     },
+  };
+
+  const menuStyles = {
+    textAlign: "left",
+    textTransform: "capitalize",
+    color: "#023d65",
+    width: "100%",
+    fontSize: "16px",
+    fontWeight: "bold",
   };
   const [openLogin, setOpenLogin] = useState(true);
   const [openSignup, setOpenSignup] = useState(false);
@@ -75,9 +86,9 @@ const Navbar = () => {
     >
       <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
         <div style={{ display: "flex", alignItems: "center", padding: "7px" }}>
-          <img src={scLogo01} className="w-[120px] sm:w-[160px]" />
-          <div className="max-[500px]:hidden">
-            <Search />
+          <img src={scLogo01} className="w-[120px] sm:w-[150px]" />
+          <div className="hidden md:flex">
+            <Search sx={{ marginLeft: 2, width: '30ch' }} />
           </div>
         </div>
         <div className="flex justify-around items-center font-['Helvetica'] ">
@@ -124,6 +135,13 @@ const Navbar = () => {
                   aria-controls={open ? "basic-menu" : undefined}
                   aria-haspopup="true"
                   aria-expanded={open ? "true" : undefined}
+                  endIcon={
+                    !open ? (
+                      <KeyboardArrowDownIcon sx={{ color: "#fff" }} />
+                    ) : (
+                      <KeyboardArrowUpIcon sx={{ color: "#fff" }} />
+                    )
+                  }
                   onClick={handleClick}
                   disableRipple={true}
                 >
@@ -137,18 +155,10 @@ const Navbar = () => {
                   MenuListProps={{
                     "aria-labelledby": "basic-button",
                   }}
-                  // sx={{ width: "200px" }}
                 >
                   <div className="menu-div">
                     <Button
-                      sx={{
-                        textAlign: "left",
-                        textTransform: "capitalize",
-                        color: "#023d65",
-                        width: "100%",
-                        fontSize: "16px",
-                        fontWeight: "bold",
-                      }}
+                      sx={menuStyles}
                       size="small"
                       onClick={() => {
                         setCreate(false);
@@ -159,14 +169,7 @@ const Navbar = () => {
                       Venues
                     </Button>
                     <Button
-                      sx={{
-                        textAlign: "left",
-                        textTransform: "capitalize",
-                        color: "#023d65",
-                        width: "100%",
-                        fontSize: "16px",
-                        fontWeight: "bold",
-                      }}
+                      sx={menuStyles}
                       size="small"
                       onClick={() => {
                         setCreate(false);
@@ -182,13 +185,7 @@ const Navbar = () => {
                         navigate(STORIES);
                         setCreate(false);
                       }}
-                      sx={{
-                        textTransform: "capitalize",
-                        color: "#023d65",
-                        width: "100%",
-                        fontSize: "16px",
-                        fontWeight: "bold",
-                      }}
+                      sx={menuStyles}
                       size="small"
                     >
                       Stories
@@ -198,13 +195,7 @@ const Navbar = () => {
                         handleLogin();
                         setAnchorEl(null);
                       }}
-                      sx={{
-                        textTransform: "capitalize",
-                        color: "#023d65",
-                        width: "100%",
-                        fontSize: "16px",
-                        fontWeight: "bold",
-                      }}
+                      sx={menuStyles}
                       startIcon={<TbLogin />}
                       size="small"
                     >
@@ -235,6 +226,13 @@ const Navbar = () => {
                 aria-controls={open ? "basic-menu" : undefined}
                 aria-haspopup="true"
                 aria-expanded={open ? "true" : undefined}
+                endIcon={
+                  !open ? (
+                    <KeyboardArrowDownIcon sx={{ color: "#fff" }} />
+                  ) : (
+                    <KeyboardArrowUpIcon sx={{ color: "#fff" }} />
+                  )
+                }
                 onClick={handleClick}
                 disableRipple={true}
               >
@@ -248,7 +246,6 @@ const Navbar = () => {
                 MenuListProps={{
                   "aria-labelledby": "basic-button",
                 }}
-                // sx={{ width: "200px" }}
               >
                 <div className="menu-div">
                   <div className="menu-avatar">
@@ -257,7 +254,11 @@ const Navbar = () => {
                       sx={{ marginLeft: "20px", width: 52, height: 52 }}
                     />
                     <div className="menu-profile">
-                      <Typography fontSize={15} fontWeight={600} color={'#023d65'}>
+                      <Typography
+                        fontSize={15}
+                        fontWeight={600}
+                        color={"#023d65"}
+                      >
                         Ms. Janvi
                       </Typography>
                       <PrimaryButton
@@ -280,13 +281,7 @@ const Navbar = () => {
                     </div>
                   </div>
                   <Button
-                    sx={{
-                      textTransform: "capitalize",
-                      color: "#023d65",
-                      width: "100%",
-                      fontSize: "16px",
-                      fontWeight: "bold",
-                    }}
+                    sx={menuStyles}
                     size="small"
                     onClick={() => {
                       setCreate(false);
@@ -297,13 +292,7 @@ const Navbar = () => {
                     Account Information
                   </Button>
                   <Button
-                    sx={{
-                      textTransform: "capitalize",
-                      color: "#023d65",
-                      width: "100%",
-                      fontSize: "16px",
-                      fontWeight: "bold",
-                    }}
+                    sx={menuStyles}
                     size="small"
                     onClick={() => {
                       setCreate(false);
@@ -316,14 +305,7 @@ const Navbar = () => {
                   {!create ? (
                     <div className="sm:hidden">
                       <Button
-                        sx={{
-                          textAlign: "left",
-                          textTransform: "capitalize",
-                          color: "#023d65",
-                          width: "100%",
-                          fontSize: "16px",
-                          fontWeight: "bold",
-                        }}
+                        sx={menuStyles}
                         size="small"
                         onClick={() => {
                           setCreate(true);
@@ -339,14 +321,7 @@ const Navbar = () => {
                   )}
                   <div className="lg:hidden">
                     <Button
-                      sx={{
-                        textAlign: "left",
-                        textTransform: "capitalize",
-                        color: "#023d65",
-                        width: "100%",
-                        fontSize: "16px",
-                        fontWeight: "bold",
-                      }}
+                      sx={menuStyles}
                       size="small"
                       onClick={() => {
                         setCreate(false);
@@ -357,14 +332,7 @@ const Navbar = () => {
                       Venues
                     </Button>
                     <Button
-                      sx={{
-                        textAlign: "left",
-                        textTransform: "capitalize",
-                        color: "#023d65",
-                        width: "100%",
-                        fontSize: "16px",
-                        fontWeight: "bold",
-                      }}
+                      sx={menuStyles}
                       size="small"
                       onClick={() => {
                         setCreate(false);
@@ -380,38 +348,17 @@ const Navbar = () => {
                         navigate(STORIES);
                         setCreate(false);
                       }}
-                      sx={{
-                        textTransform: "capitalize",
-                        color: "#023d65",
-                        width: "100%",
-                        fontSize: "16px",
-                        fontWeight: "bold",
-                      }}
+                      sx={menuStyles}
                       size="small"
                     >
                       Stories
                     </Button>
                   </div>
-                  <Button
-                    sx={{
-                      textTransform: "capitalize",
-                      color: "#023d65",
-                      width: "100%",
-                      fontSize: "16px",
-                      fontWeight: "bold",
-                    }}
-                    size="small"
-                  >
+                  <Button sx={menuStyles} size="small">
                     Help
                   </Button>
                   <Button
-                    sx={{
-                      textTransform: "capitalize",
-                      color: "#023d65",
-                      width: "100%",
-                      fontSize: "16px",
-                      fontWeight: "bold",
-                    }}
+                    sx={menuStyles}
                     size="small"
                     startIcon={<TbLogout />}
                     onClick={() => {
