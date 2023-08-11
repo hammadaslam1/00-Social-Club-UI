@@ -84,7 +84,7 @@ const Home = () => {
       >
         {slides?.map((data, i) => (
           <Box
-            className="h-[50vh] md:h-[75vh] lg:h-[100vh]"
+            className="h-[400px] md:h-[550px] lg:h-[700px]"
             key={i}
             sx={{
               display: "flex",
@@ -98,15 +98,9 @@ const Home = () => {
           >
             <div
               className="flex items-center h-[95%]"
-              // style={{
-              //   display: "flex",
-              //   alignItems: "center",
-              //   height: "95vh",
-              // }}
             >
               <div
                 className=" flex-1 p-[20px] md:p-[55px] lg:p-[90px] text-lg md:text-2xl lg:text-4xl"
-                // style={{ flex: 1, padding: "90px" }}
               >
                 <Typography
                   fontSize="32pt"
