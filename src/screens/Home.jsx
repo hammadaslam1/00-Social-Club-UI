@@ -84,7 +84,7 @@ const Home = () => {
       >
         {slides?.map((data, i) => (
           <Box
-            className="h-[400px] md:h-[550px] lg:h-[700px]"
+            className="h-[300px] sm:h-[400px] md:h-[550px] lg:h-[700px]"
             key={i}
             sx={{
               display: "flex",
@@ -133,7 +133,7 @@ const Home = () => {
                   justifyContent: "center",
                 }}
               >
-                <img src={SLIDE_LOGO} className="w-[100px] md:w-[150px] lg:w-[200px]" />
+                <img src={SLIDE_LOGO} className="w-[75px] sm:w-[100px] md:w-[150px] lg:w-[200px]" />
               </div>
             </div>
             <img
